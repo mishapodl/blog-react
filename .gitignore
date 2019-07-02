@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 /.prettierrc
+/layout-blog
 
 # testing
 /coverage
