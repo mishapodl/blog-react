@@ -6,6 +6,8 @@
 .pnp.js
 /.prettierrc
 /layout-blog
+/client
+/terminalylayout.html
 
 # testing
 /coverage
