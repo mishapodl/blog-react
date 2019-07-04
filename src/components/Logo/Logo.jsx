@@ -1,16 +1,18 @@
 import React from "react";
+import PropTypes from "prop-types";
+import "./Logo.scss";
 
-const Logo = () => {
+const Logo = ({}) => {
   return (
     <div className="logo">
       <a href="/">
-        <img
-          // src="https://s.dou.ua/CACHE/img/images/img/img/static/companies/0_WEIjpk6/9df250122072943d117a09554dccd78b.png"
-          src=""
-          alt=""
-        />
+        <img src="" alt="" />
       </a>
     </div>
   );
 };
+
+Logo.propTypes = {};
+Logo.defaultProps = {};
+
 export default Logo;

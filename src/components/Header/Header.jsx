@@ -1,5 +1,6 @@
 import React from "react";
 import { Logo, Navigation, BarContacts } from "../index";
+import "./Header.scss";
 
 const Header = () => {
   return (
@@ -13,5 +14,8 @@ const Header = () => {
     </header>
   );
 };
+
+Header.propTypes = {};
+Header.defaultProps = {};
 
 export default Header;

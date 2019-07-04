@@ -1,13 +1,15 @@
 import React from "react";
+import PropTypes from "prop-types";
+import "./BarContacts.scss";
 
-const BarContacts = ({ showHader }) => {
+const BarContacts = ({ showHaderSection }) => {
   return (
     <section className="contact-information">
-      {false ? (
+      {showHaderSection && (
         <header>
           <h3>Contact information</h3>
         </header>
-      ) : null}
+      )}
 
       <ul>
         <div>
@@ -35,6 +37,12 @@ const BarContacts = ({ showHader }) => {
       </ul>
     </section>
   );
+};
+
+BarContacts.propTypes = {};
+
+BarContacts.defaultProps = {
+  showHaderSection: false
 };
 
 export default BarContacts;

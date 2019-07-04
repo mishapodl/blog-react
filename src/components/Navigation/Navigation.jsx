@@ -1,6 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
+import "./Navigation.scss";
 
-export default function Navigation() {
+const Navigation = ({ showListItem }) => {
   return (
     <>
       <nav>
@@ -8,9 +10,11 @@ export default function Navigation() {
           <li>
             <a href="/">Home</a>
           </li>
-          <li>
-            <a href="/">Contacts</a>
-          </li>
+          {showListItem && (
+            <li>
+              <a href="/">Contacts</a>
+            </li>
+          )}
           <li>
             <a href="/">Posts</a>
           </li>
@@ -21,4 +25,12 @@ export default function Navigation() {
       </nav>
     </>
   );
-}
+};
+
+Navigation.propTypes = {};
+
+Navigation.defaultProps = {
+  showListItem: true
+};
+
+export default Navigation;
