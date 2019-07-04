@@ -1,0 +1,32 @@
+// @import "../../App.scss";
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div#root > header {
+  flex-direction: column;
+  @include flex-between;
+  height: 70vh;
+  background-image: url("/banner.jpg");
+  background-position: center;
+  background-size: cover;
+  > h1 {
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 100;
+    border: 1px solid #fff;
+    color: #fff;
+    letter-spacing: 0.15rem;
+    padding: 0.5rem 1rem;
+  }
+  > div {
+    @include flex-between;
+    width: 80%;
+    max-width: 1366px;
+    margin: 0 auto;
+  }
+}

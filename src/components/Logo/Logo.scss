@@ -1,0 +1,22 @@
+// @import "../../App.scss";
+
+div#root > header {
+  > div {
+    > .logo {
+      margin: 2rem;
+      background-color: rgba(0, 0, 0, 0.66);
+      border-radius: 10px;
+      width: 130px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      > a {
+        display: flex;
+        img {
+          width: 100%;
+          object-fit: cover
+        }
+      }
+    }
+  }
+}
