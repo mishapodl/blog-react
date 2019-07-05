@@ -1,14 +1,13 @@
 import React from "react";
 import { Header, Footer } from "./components/index";
-import { Home, Article } from "./pages/index";
-
+import { News, Post } from "./containers/index";
 import "./App.scss";
 
 const App = () => (
   <>
     <Header />
-		{/* <Home /> */}
-    <Article />
+		<News />
+    {/* <Post /> */}
     <Footer />
   </>
 );

@@ -1,5 +1,5 @@
 import Article from "./Article/Article";
-import AsideBar from "./AsideBar/AsideBar";
+import AsideBarPosts from "./AsideBarPosts/AsideBarPosts";
 import BarContacts from "./BarContacts/BarContacts";
 import Comments from "./Comments/Comments";
 import LatestPosts from "./LatestPosts/LatestPosts";
@@ -13,7 +13,7 @@ export {
   Article,
   Footer,
   Header,
-  AsideBar,
+  AsideBarPosts,
   BarContacts,
   Comments,
   LatestPosts,

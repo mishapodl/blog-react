@@ -1,1 +1,94 @@
-@import url("../../App.scss");
+// @import url("../../App.scss");
+
+$text-color-nav: #fff;
+$text-color-nav-hoevr: #000;
+$border-color-nav: #fff;
+$border-color-nav-hoevr: #000;
+$background-color-nav: #fff;
+
+$background-color-icons: #000;
+
+$text-color-main-H2: #777;
+$border-color-main-H2: #000;
+
+
+@mixin border-header {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #fff;
+}
+@mixin flex-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; 
+}
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin h2-on-page {
+  text-align: center;
+  margin: 1.5rem 0 1.5rem 0 ;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  border: 1px solid $border-color-main-H2;
+  color: $text-color-main-H2;
+  padding: 0.25rem 1rem 0.25rem 1.2rem;
+}
+
+section.comments {
+  > h3 {
+    display: inline-block;
+    margin: 0 0 1rem 0;
+    border-bottom: 0.05rem solid #d3d3d3;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1.65rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    line-height: 1.75rem;
+  }
+  > article {
+    border-bottom: 1px solid #c0bfbf;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    > .comment {
+      &-posted {
+        @include flex-between;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.15rem;
+        > footer,
+        span {
+          @include border-header;
+          min-width: 100px;
+          text-align: center;
+        }
+      }
+      &-content {
+        display: flex;
+        align-items: center;
+        > img {
+          display: block;
+          margin: 1rem 0 1rem;
+          background-color: #ed786a;
+          width: 70px;
+          height: 70px;
+          border-radius: 100%;
+        }
+        > p {
+          color: #000000;
+          margin: 1rem 0.5rem 1rem 1rem;
+          padding: 0.5rem 0 0.5rem 1rem;
+          border-left: 1px solid rgb(119, 119, 119);
+          min-height: 70px;
+          width: calc(100% - 90px);
+          line-height: 1.5rem;
+        }
+      }
+    }
+  }
+}

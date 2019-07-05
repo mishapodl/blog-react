@@ -1,0 +1,207 @@
+@import url("../../App.scss");
+
+$text-color-main-H2: #777;
+$border-color-main-H2: #000;
+
+
+@mixin border-header {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #fff;
+}
+@mixin flex-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; 
+}
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin h2-on-page {
+  text-align: center;
+  margin: 1.5rem 0 1.5rem 0 ;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  border: 1px solid $border-color-main-H2;
+  color: $text-color-main-H2;
+  padding: 0.25rem 1rem 0.25rem 1.2rem;
+}
+
+section.latest-posts {
+  width: 90%;
+  max-width: 1366px;
+  margin: 0 auto;
+  header {
+    width: 100%;
+    text-align: center;
+    h2 {
+      @include h2-on-page;
+      display: inline-block;
+    }
+  }
+  > div.container {
+    @include flex-between;
+    align-items: flex-start;
+    min-height: 1000px;
+    margin: 20px 0;
+    > div.latest-posts-container {
+      display: flex;
+      width: 70%;
+      overflow: hidden;
+      flex-wrap: wrap;
+      article {
+        width: 46%;
+        overflow: hidden;
+        margin: 2rem 2%;
+        min-height: 400px;
+        position: relative;
+        transition: .3s;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        padding-bottom: 3rem;
+        > div.bg-post-img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          transition: 1s;
+          top: 0;
+          z-index: -1;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+           }
+          span {
+            position: absolute;
+            display: block;
+            background-color: rgba(0, 0, 0, 0.301);
+            width: 100%;
+            height: 100%;
+           }
+        }
+        > header {
+          text-align-last: left;
+          > h3 {
+            @include border-header;
+            margin: 1rem;
+            border: 1px solid #fff;
+            background-color: rgba(0, 0, 0, 0.267);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-weight: 400;
+            text-align: left;
+          }
+        }
+        > p { 
+          margin: 1rem;
+          border: 1px solid #fff;
+          background-color: rgba(0, 0, 0, 0.267);
+          padding: 0.6rem 0.5rem;
+          text-align: center;
+          line-height: 1.5;
+        } 
+        &:hover {
+          border-radius: 25px;
+        }
+        button {
+          position: absolute;
+          padding: 0.3rem 0.5rem;
+          bottom: 1.5rem;
+          left: 1rem;
+          color: #ffffff;
+          border: 1px solid #fff;
+          background-color: #00000044;
+          transition: .33s;
+          cursor: pointer;
+          text-transform: uppercase;
+          outline: 0;
+          font-weight: 400;
+          font-size: 1rem;
+          letter-spacing: 2px;
+          &:hover {
+            background-color: #000000c0;
+          }
+        }
+      }
+    }
+    > aside.latest-posts-bar {
+      width: 25%;
+      min-width: 250px;
+      margin-left: 2%;
+      margin-top: 2rem;
+      transition: .3s;
+      > header {
+        > h4 {
+          @include h2-on-page;
+          padding: 0.25rem 0.5rem 0.25rem 0.7rem;
+          font-size: 1rem;
+          margin: 0 0 1rem 0;
+        }
+      }
+      div.posts {
+        display: flex;
+        flex-direction: column;
+        article {
+          position: relative;
+          border-bottom: 1px solid #000;
+          margin: 1rem 0 0 0;
+          padding: 1.5rem 0 4rem 0;
+           > header {
+             text-align-last: left;
+             margin: 1rem 0;
+             padding: 0 0.5rem;
+             > h4 {
+               @include border-header;
+               min-width: 100px;
+               text-align: center;
+               text-transform: uppercase;
+               font-weight: 400;
+               letter-spacing: 0.1rem;
+               font-size: 1.1rem;
+             }
+           }
+           > p {
+            text-align: l;
+            line-height: 1.5;
+            letter-spacing: 0.05rem;
+            font-weight: 100;
+            color: #000;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            padding: 0 0.5rem;
+           }
+           > button {
+            position: absolute;
+            padding: 0.3rem 0.5rem;
+            bottom: 0;
+            margin: 1rem 0;
+            border: 1px solid #000;
+            background-color: #fff;
+            transition: .33s;
+            cursor: pointer;
+            color: #777777;
+            text-transform: uppercase;
+            outline: 0;
+            font-weight: 400;
+            font-size: 0.7rem;
+            letter-spacing: 2px; 
+            margin-left: 1rem;
+            &:hover {
+              background-color: #e7e7e7c0;
+            }
+          }
+        }
+      }
+      &:hover {
+        box-shadow: 1px 20px 20px 0px #00000029;
+        margin: 25px -3px 0 0;
+      }
+    }
+  }
+}

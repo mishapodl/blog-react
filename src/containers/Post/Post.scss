@@ -1,1 +1,13 @@
 @import url("../../App.scss");
+
+@mixin border-header {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #fff;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -1,1 +1,99 @@
 @import url("../../App.scss");
+
+$text-color-nav: #fff;
+$text-color-nav-hoevr: #000;
+$border-color-nav: #fff;
+$border-color-nav-hoevr: #000;
+$background-color-nav: #fff;
+
+$background-color-icons: #000;
+
+$text-color-main-H2: #777;
+$border-color-main-H2: #000;
+
+@mixin border-header {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #fff;
+}
+@mixin flex-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; 
+}
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin h2-on-page {
+  text-align: center;
+  margin: 1.5rem 0 1.5rem 0 ;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  border: 1px solid $border-color-main-H2;
+  color: $text-color-main-H2;
+  padding: 0.25rem 1rem 0.25rem 1.2rem;
+}
+
+section.popular-posts {display: none;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  max-width: 1366px;
+  margin: 0 auto;
+  > header {
+    > h2 {      
+      @include h2-on-page;
+    }
+  }
+  > div {
+    display: flex;
+    > article {
+      width: 33.3%;
+      overflow: hidden;
+      margin: 1rem 1.5rem;
+      box-shadow: 0 0 20px 0px #0000003d;
+      transition: .3s;
+      cursor: pointer;
+       > figure {
+        margin-bottom: 1.5rem;
+         img {
+          width: 100%;
+          border: solid 5px #ebebeb;
+        
+        }
+      }
+      &:nth-child(1) {
+        margin-left: 0;
+      }
+      &:nth-child(3) {
+        margin-right: 0;
+      }
+      > div {
+        h3 {
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 1rem;
+          letter-spacing: 2px;
+          margin: 0 0 1.25rem 0;
+          color: #666;
+        }
+        p {
+          color: #666;
+          line-height: 1.5;
+          text-align: center;
+          padding: 0 1rem 2rem;
+          font-weight: 100;
+        }
+      }
+      &:hover {
+        box-shadow: 1px 1px 20px 1px #0000003d;
+        margin-top: -0.1rem;
+      }
+    }
+  }
+}

@@ -1,1 +1,45 @@
 @import url("../../App.scss");
+
+$text-color-main-H2: #777;
+$border-color-main-H2: #000;
+
+@mixin border-header {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #fff;
+}
+
+@mixin h2-on-page {
+  text-align: center;
+  margin: 1.5rem 0 1.5rem 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  border: 1px solid $border-color-main-H2;
+  color: $text-color-main-H2;
+  padding: 0.25rem 1rem 0.25rem 1.2rem;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main {
+  width: 100%;
+  > section.latest-posts {
+    width: 90%;
+    max-width: 1366px;
+    margin: 0 auto;
+    header {
+      width: 100%;
+      text-align: center;
+      h2 {
+        @include h2-on-page;
+        display: inline-block;
+      }
+    }
+  }
+}
