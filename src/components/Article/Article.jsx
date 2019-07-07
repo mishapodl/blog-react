@@ -11,7 +11,6 @@ const Article = ({}) => {
       <div className="post-img">
         <img src="bg.jpg" alt="img" />
       </div>
-      <button>Leave comment</button>
       <div className="post-desc">
         <h3>Esse corrupti!</h3>
         <p>

@@ -19,7 +19,7 @@ $border-color-main-H2: #000;
 @mixin flex-around {
   display: flex;
   align-items: center;
-  justify-content: space-around; 
+  justify-content: space-around;
 }
 @mixin flex-between {
   display: flex;
@@ -28,7 +28,7 @@ $border-color-main-H2: #000;
 }
 @mixin h2-on-page {
   text-align: center;
-  margin: 1.5rem 0 1.5rem 0 ;
+  margin: 1.5rem 0 1.5rem 0;
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
@@ -38,7 +38,7 @@ $border-color-main-H2: #000;
   padding: 0.25rem 1rem 0.25rem 1.2rem;
 }
 
-section.popular-posts {display: none;
+section.popular-posts {
   flex-direction: column;
   display: flex;
   align-items: center;
@@ -46,54 +46,11 @@ section.popular-posts {display: none;
   max-width: 1366px;
   margin: 0 auto;
   > header {
-    > h2 {      
+    > h2 {
       @include h2-on-page;
     }
   }
   > div {
     display: flex;
-    > article {
-      width: 33.3%;
-      overflow: hidden;
-      margin: 1rem 1.5rem;
-      box-shadow: 0 0 20px 0px #0000003d;
-      transition: .3s;
-      cursor: pointer;
-       > figure {
-        margin-bottom: 1.5rem;
-         img {
-          width: 100%;
-          border: solid 5px #ebebeb;
-        
-        }
-      }
-      &:nth-child(1) {
-        margin-left: 0;
-      }
-      &:nth-child(3) {
-        margin-right: 0;
-      }
-      > div {
-        h3 {
-          text-transform: uppercase;
-          text-align: center;
-          font-size: 1rem;
-          letter-spacing: 2px;
-          margin: 0 0 1.25rem 0;
-          color: #666;
-        }
-        p {
-          color: #666;
-          line-height: 1.5;
-          text-align: center;
-          padding: 0 1rem 2rem;
-          font-weight: 100;
-        }
-      }
-      &:hover {
-        box-shadow: 1px 1px 20px 1px #0000003d;
-        margin-top: -0.1rem;
-      }
-    }
   }
 }

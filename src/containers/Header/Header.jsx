@@ -1,5 +1,5 @@
 import React from "react";
-import { Logo, Navigation, BarContacts } from "../index";
+import { Logo, Navigation, BarContacts } from "../../components/index";
 import "./Header.scss";
 
 const Header = () => {

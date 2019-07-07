@@ -1,0 +1,44 @@
+section.popular-posts {
+  article {
+    width: 33.3%;
+    overflow: hidden;
+    margin: 1rem 1.5rem;
+    box-shadow: 0 0 20px 0px #0000003d;
+    transition: 0.3s;
+    cursor: pointer;
+    > figure {
+      margin-bottom: 1.5rem;
+      img {
+        width: 100%;
+        border: solid 5px #ebebeb;
+      }
+    }
+    &:nth-child(1) {
+      margin-left: 0;
+    }
+    &:nth-child(3) {
+      margin-right: 0;
+    }
+    > div {
+      h3 {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        margin: 0 0 1.25rem 0;
+        color: #666;
+      }
+      p {
+        color: #666;
+        line-height: 1.5;
+        text-align: center;
+        padding: 0 1rem 2rem;
+        font-weight: 100;
+      }
+    }
+    &:hover {
+      box-shadow: 1px 1px 20px 1px #0000003d;
+      margin-top: -0.1rem;
+    }
+  }
+}

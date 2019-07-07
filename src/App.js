@@ -1,13 +1,15 @@
 import React from "react";
-import { Header, Footer } from "./components/index";
-import { News, Post } from "./containers/index";
+import { Switch, Route } from "react-router-dom";
+import { News, Post, Header, Footer } from "./containers/index";
 import "./App.scss";
 
 const App = () => (
   <>
     <Header />
-		<News />
-    {/* <Post /> */}
+    <Switch>
+      <Route exact path="/" component={News} />
+      <Route path="/post" component={Post} />
+    </Switch>
     <Footer />
   </>
 );

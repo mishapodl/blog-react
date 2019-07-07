@@ -1,0 +1,28 @@
+import React from "react";
+import PropTypes from "prop-types";
+import "./CardPost.scss";
+
+const CardPost = ({}) => (
+  [1, 2, 3].map(i => (
+      <article>
+        <figure>
+          <img src={`img${i}.jpg`} alt="img" />
+        </figure>
+        <div>
+          <header>
+            <h3>Lorem ipsum dolor sit.</h3>
+          </header>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+            maxime debitis praesentium nihil quam pariatur enim harum sunt
+            quibusdam facere.
+          </p>
+        </div>
+      </article>
+    ))
+);
+
+CardPost.propTypes = {};
+CardPost.defaultProps = {};
+
+export default CardPost;

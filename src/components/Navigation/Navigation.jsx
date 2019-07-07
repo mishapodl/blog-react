@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./Navigation.scss";
 
@@ -8,18 +9,18 @@ const Navigation = ({ showListItem }) => {
       <nav>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/post">Post</Link>
           </li>
           {showListItem && (
             <li>
-              <a href="/">Contacts</a>
+              <Link to="/">Contacts</Link>
             </li>
           )}
           <li>
-            <a href="/">Posts</a>
-          </li>
-          <li>
-            <a href="/">About us</a>
+            <Link to="/">About us</Link>
           </li>
         </ul>
       </nav>

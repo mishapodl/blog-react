@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigation, BarContacts } from "../index";
+import { Navigation, BarContacts } from "../../components/index";
 import "./Footer.scss";
 
 const Footer = () => {
