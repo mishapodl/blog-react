@@ -4,12 +4,12 @@ import "./LatestPosts.scss";
 
 const LatestPosts = ({}) => {
   return (
-    <div class="latest-posts-container">
-      {[1, 2, 3].map(i => (
-        <article>
-          <div class="bg-post-img">
+    <div className="latest-posts-container">
+      {[1, 2, 3].map((post, i) => (
+        <article key={i}>
+          <div className="bg-post-img">
             <span />
-            <img src={`img${i}.jpg`} alt="img" />
+            <img src={`img${post}.jpg`} alt="img" />
           </div>
           <header>
             <h3>Lorem, ipsum dolor.</h3>

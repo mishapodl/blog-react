@@ -6,8 +6,8 @@ const Comments = ({}) => {
   return (
     <section className="comments">
       <h3>Comments</h3>
-      {[1, 2, 3].map(i => (
-        <article>
+      {[1, 2, 3].map((_, i) => (
+        <article key={i}>
           <div className="comment-posted">
             <footer>
               <p>Michael Podlevskykh</p>

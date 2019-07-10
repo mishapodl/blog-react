@@ -1,24 +1,26 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { AsideBarPosts, LatestPosts, PopularPosts } from "../../components/index";
+import {
+  AsideBarPosts,
+  LatestPosts,
+  PopularPosts
+} from "../../components/index";
 import "./News.scss";
 
 class News extends Component {
-  static propTypes = {
-    prop: PropTypes
-  };
+  static propTypes = {};
 
   render() {
     return (
       <main>
         <PopularPosts />
 
-        <section class="latest-posts">
+        <section className="latest-posts">
           <header>
             <h2>Latest posts</h2>
           </header>
 
-          <div class="container">
+          <div className="container">
             <LatestPosts />
             <AsideBarPosts />
           </div>

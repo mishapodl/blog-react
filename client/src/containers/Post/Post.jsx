@@ -5,16 +5,14 @@ import { Comments, Article } from "../../components/index";
 import "./Post.scss";
 
 class Post extends Component {
-  static propTypes = {
-    prop: PropTypes
-  };
+  static propTypes = {};
 
   render() {
     return (
       <main>
         <article className="post">
           <Article />
-          <Comments /> 
+          <Comments />
         </article>
       </main>
     );

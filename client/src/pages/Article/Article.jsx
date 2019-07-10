@@ -4,9 +4,7 @@ import PropTypes from "prop-types";
 import "./Article.scss";
 
 class Article extends Component {
-  static propTypes = {
-    prop: PropTypes
-  };
+  static propTypes = {};
 
   render() {
     return (

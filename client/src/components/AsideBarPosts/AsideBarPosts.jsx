@@ -4,13 +4,13 @@ import "./AsideBarPosts.scss";
 
 const AsideBarPosts = ({}) => {
   return (
-    <aside class="latest-posts-bar">
+    <aside className="latest-posts-bar">
       <header>
         <h4>Popular last month</h4>
       </header>
-      <div class="posts">
-        {[null, null, null].map(i => (
-          <article>
+      <div className="posts">
+        {[null, null, null].map((_, i) => (
+          <article key={i}>
             <header>
               <h4>Lorem ipsum dolor</h4>
             </header>
