@@ -6,14 +6,9 @@ import {
   PopularPosts
 } from "../../components/index";
 import "./News.scss";
-import { getPosts } from "../../redux/apis/_";
 
 class News extends Component {
   static propTypes = {};
-
-  componentDidMount() {
-    getPosts();
-  }
 
   render() {
     return (
