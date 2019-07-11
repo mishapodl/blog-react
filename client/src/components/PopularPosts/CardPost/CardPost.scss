@@ -5,7 +5,8 @@ section.popular-posts {
     margin: 1rem 1.5rem;
     box-shadow: 0 0 20px 0px #0000003d;
     transition: 0.3s;
-    cursor: pointer;
+		cursor: pointer;
+		max-height: 405px;
     > figure {
       margin-bottom: 1.5rem;
       img {
