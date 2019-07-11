@@ -11,19 +11,19 @@ function postsReducer(state = postState, action) {
     case POSTS.POSTS_LOADING:
       return {
         ...state,
-        isLoading: true
+        loading: true
       };
     case POSTS.POSTS_SUCCESS:
       return {
         ...state,
         posts: [...action.payload],
         success: true,
-        isLoading: false,
+        loading: false,
       };
     case POSTS.POSTS_ERROR:
       return {
         ...state,
-        isLoading: true,
+        loading: false,
         success: false,
       };
     default:
