@@ -1,7 +1,6 @@
 import { POSTS } from "../constants";
 
 export const loadPosts = () => {
-	console.log('action-load')
 	return {
   	type: POSTS.LOADING
 	}

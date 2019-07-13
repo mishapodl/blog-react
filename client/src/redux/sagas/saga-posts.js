@@ -4,7 +4,6 @@ import { setErrorPosts, setPosts } from "../actions/actions-posts";
 
 
 export function* workGetPosts() {
-	console.log('work-saga-get')
   try {
 		const posts = yield call(fetchGetPosts);
     yield put(setPosts(posts));

@@ -1,11 +1,14 @@
 import { combineReducers } from "redux";
 
-import postsReducer from "./reducer-posts";
-import loadReducer from "./reducer-load";
+import reducerPosts from "./reducer-posts";
+import reducersLoad from "./reducer-load";
+import faildReducer from "./reducer-fail";
 
 const rootReducer = combineReducers({
-  posts: postsReducer,
-  isLoad: loadReducer
+  posts: reducerPosts,
+	isLoad: reducersLoad,
+	error: faildReducer
+	
 });
 
 export default rootReducer;

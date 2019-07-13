@@ -1,13 +1,11 @@
 import { POSTS } from "../constants";
 import { combineReducers } from "redux";
 
-const loadReducerPosts = (state = false, action) => {
+const reducerLoadPosts = (state = false, action) => {
   switch (action.type) {
 		case POSTS.LOADING:
-			console.log('reducer-load-posts')
       return false;
 			case POSTS.LOAD_SUCCESS:
-			console.log('reducer-success-load-posts')
 				return true;
     case POSTS.ERROR:
       return false;
@@ -15,9 +13,8 @@ const loadReducerPosts = (state = false, action) => {
       return state;
   }
 };
-
-const loadReducer = combineReducers({
-  isLoadPost: loadReducerPosts,
+const reducersLoad = combineReducers({
+  isLoadPosts: reducerLoadPosts,
 });
 
-export default loadReducer;
+export default reducersLoad;

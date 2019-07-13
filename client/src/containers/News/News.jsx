@@ -4,22 +4,19 @@ import { loadPosts } from "../../redux/actions/index";
 import {
   AsideBarPosts,
   LatestPosts,
-	PopularPosts,
-	// Spiner
+  PopularPosts
 } from "../../components/index";
 import "./News.scss";
 
 class News extends Component {
   componentDidMount() {
-		console.log('cmd-1')
-    loadPosts();
-		console.log('cmd-2')
+    this.props.loadPosts();
   }
 
   render() {
-    // const { posts, loading, success } = this.props;
-		// const latestPosts = success ? <LatestPosts posts={posts} /> : <Spiner />;
-		
+    const { posts, isLoadPosts } = this.props;
+    console.log(isLoadPosts && posts);
+
     return (
       <main>
         <PopularPosts />
@@ -40,10 +37,9 @@ class News extends Component {
   }
 }
 
-const mapStateToProps = ({ posts: { loading, posts, success } }) => ({
+const mapStateToProps = ({ posts, isLoad: { isLoadPosts } }) => ({
   posts,
-  loading,
-  success
+  isLoadPosts
 });
 
 export default connect(

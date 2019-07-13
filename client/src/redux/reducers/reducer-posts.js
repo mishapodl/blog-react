@@ -1,20 +1,12 @@
 import { POSTS } from "../constants";
 
-const postState = {
-  posts: []
-};
-
-function postsReducer(state = postState, action) {
+function reducerPosts(state = [], action) {
   switch (action.type) {
     case POSTS.LOAD_SUCCESS:
-      console.log("reducer-success");
-      return {
-        ...state,
-        posts: [...action.payload]
-      };
+      return [...state, ...action.payload];
     default:
       return state;
   }
 }
 
-export default postsReducer;
+export default reducerPosts;
