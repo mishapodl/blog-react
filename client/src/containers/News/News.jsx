@@ -1,16 +1,25 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { loadPosts } from "../../redux/actions/index";
 import {
   AsideBarPosts,
   LatestPosts,
-  PopularPosts
+	PopularPosts,
+	// Spiner
 } from "../../components/index";
 import "./News.scss";
 
 class News extends Component {
-  static propTypes = {};
+  componentDidMount() {
+		console.log('cmd-1')
+    loadPosts();
+		console.log('cmd-2')
+  }
 
   render() {
+    // const { posts, loading, success } = this.props;
+		// const latestPosts = success ? <LatestPosts posts={posts} /> : <Spiner />;
+		
     return (
       <main>
         <PopularPosts />
@@ -25,15 +34,19 @@ class News extends Component {
             <AsideBarPosts />
           </div>
         </section>
+        <button onClick={this.props.loadPosts}>Test Button</button>
       </main>
     );
   }
 }
 
-// const mapStateToProps = state => ({});
+const mapStateToProps = ({ posts: { loading, posts, success } }) => ({
+  posts,
+  loading,
+  success
+});
 
-// const mapDispatchToProps = {};
-
-// export default connect(mapStateToProps, mapDispatchToProps)(News)
-
-export default News;
+export default connect(
+  mapStateToProps,
+  { loadPosts }
+)(News);

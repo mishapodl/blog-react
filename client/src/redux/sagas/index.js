@@ -1,14 +1,9 @@
-import { takeEvery } from "redux-saga/effects";
 import { POSTS } from "../constants";
-
-function* success() {
-  try {
-    yield console.log("success");
-  } catch (err) {
-    console.log("fail");
-  }
-}
+import { takeEvery } from "redux-saga/effects";
+import { workGetPosts } from "./saga-posts";
 
 export default function* watchSaga() {
-  yield takeEvery(POSTS.POSTS_LOADING, success);
+	console.log('saga-load')
+  yield takeEvery(POSTS.LOADING, workGetPosts);
+	console.log('saga-load-after')
 }

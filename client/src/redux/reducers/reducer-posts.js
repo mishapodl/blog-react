@@ -1,30 +1,16 @@
 import { POSTS } from "../constants";
 
 const postState = {
-  posts: [],
-  loading: false,
-  success: false
+  posts: []
 };
 
 function postsReducer(state = postState, action) {
   switch (action.type) {
-    case POSTS.POSTS_LOADING:
+    case POSTS.LOAD_SUCCESS:
+      console.log("reducer-success");
       return {
         ...state,
-        loading: true
-      };
-    case POSTS.POSTS_SUCCESS:
-      return {
-        ...state,
-        posts: [...action.payload],
-        success: true,
-        loading: false,
-      };
-    case POSTS.POSTS_ERROR:
-      return {
-        ...state,
-        loading: false,
-        success: false,
+        posts: [...action.payload]
       };
     default:
       return state;
