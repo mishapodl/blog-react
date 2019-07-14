@@ -9,21 +9,33 @@
 section.latest-posts {
   > div.container {
     > div.latest-posts-container {
-      display: flex;
-      width: 70%;
-      overflow: hidden;
-      flex-wrap: wrap;
+      // display: flex;
+      // width: 70%;
+      // overflow: hidden;
+			// flex-wrap: wrap;
+			display: flex;
+			overflow: hidden;
+			flex-wrap: wrap;
+			flex: 3;
+			justify-content: space-between;
       article {
-        width: 46%;
+        // width: 46%;
         overflow: hidden;
-        margin: 2rem 2%;
-        min-height: 400px;
+        // margin: 2rem 2%;
+				// min-height: 400px;
+				min-height: 350px;
         position: relative;
         transition: 0.3s;
         color: #fff;
         cursor: pointer;
         border-radius: 5px;
-        padding-bottom: 3rem;
+				// padding-bottom: 3rem;
+				padding-bottom: 4rem;
+				margin: 2% 1.5%;
+				flex: 1;
+				// min-width: 250px;
+				min-width: 300px;
+				max-width: 47%;
         > div.bg-post-img {
           position: absolute;
           width: 100%;

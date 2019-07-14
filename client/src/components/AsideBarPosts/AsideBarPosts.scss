@@ -26,8 +26,9 @@ section.latest-posts {
       width: 25%;
       min-width: 250px;
       margin-left: 2%;
-      margin-top: 2rem;
-      transition: 0.3s;
+      margin-top: 1rem;
+			transition: 0.3s;
+			padding: 0 10px;
       > header {
         > h4 {
           @include h2-on-page;
@@ -92,7 +93,7 @@ section.latest-posts {
       }
       &:hover {
         box-shadow: 1px 20px 20px 0px #00000029;
-        margin: 25px -3px 0 0;
+        // margin: 25px -3px 0 0;
       }
     }
   }

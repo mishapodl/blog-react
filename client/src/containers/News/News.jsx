@@ -9,13 +9,9 @@ import {
 import "./News.scss";
 
 class News extends Component {
-  componentDidMount() {
-    this.props.loadPosts();
-  }
 
   render() {
     const { posts, isLoadPosts } = this.props;
-    console.log(isLoadPosts && posts);
 
     return (
       <main>
@@ -31,7 +27,6 @@ class News extends Component {
             <AsideBarPosts />
           </div>
         </section>
-        <button onClick={this.props.loadPosts}>Test Button</button>
       </main>
     );
   }
