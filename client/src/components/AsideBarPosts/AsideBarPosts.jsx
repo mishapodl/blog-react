@@ -1,28 +1,31 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+
 import "./AsideBarPosts.scss";
 
-const AsideBarPosts = ({}) => {
+const AsideBarPosts = ({ posts }) => {
   return (
     <aside className="latest-posts-bar">
       <header>
         <h4>Popular last month</h4>
       </header>
       <div className="posts">
-        {[null, null, null].map((_, i) => (
-          <article key={i}>
-            <header>
-              <h4>Lorem ipsum dolor</h4>
-            </header>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et nihil
-              quo modi temporibus obcaecati necessitatibus saepe perspiciatis
-              ut, vero id consequuntur, repellat sapiente praesentium accusamus
-              odio eum? Debitis, est eius.
-            </p>
-            <button>Read more</button>
-          </article>
-        ))}
+        {posts.map(({ title, desc, likes }, index) =>
+          likes > 25 ? (
+            <article key={index}>
+              <>
+                <header>
+                  <h4>{title}</h4>
+                </header>
+                <p>{`${desc} ${desc}`}</p>
+                <Link to={`post/${index}`}>
+                  <button>Read more</button>
+                </Link>
+              </>
+            </article>
+          ) : null
+        )}
       </div>
     </aside>
   );

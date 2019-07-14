@@ -9,10 +9,8 @@ import {
 import "./News.scss";
 
 class News extends Component {
-
   render() {
     const { posts, isLoadPosts } = this.props;
-
     return (
       <main>
         <PopularPosts />
@@ -23,8 +21,8 @@ class News extends Component {
           </header>
 
           <div className="container">
-            <LatestPosts />
-            <AsideBarPosts />
+            {isLoadPosts ? <LatestPosts posts={posts} /> : "Loading"}
+            {isLoadPosts ? <AsideBarPosts posts={posts} /> : "Loading"}
           </div>
         </section>
       </main>

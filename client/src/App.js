@@ -15,7 +15,7 @@ class App extends Component {
         <Header />
         <Switch>
           <Route exact path="/" component={News} />
-          <Route path="/post" component={Post} />
+          <Route path="/post/:id_post" params={`name`} component={Post} />
         </Switch>
         <Footer />
       </>

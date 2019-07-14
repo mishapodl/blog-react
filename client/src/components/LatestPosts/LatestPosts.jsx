@@ -1,26 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import "./LatestPosts.scss";
 
-const LatestPosts = ({}) => {
+const LatestPosts = ({ posts }) => {
+  // console.log(posts[0])
   return (
     <div className="latest-posts-container">
-      {[1, 2, 3].map((post, i) => (
-        <article key={i}>
+      {posts.map(({ img, desc, title }, index) => (
+        <article key={index}>
           <div className="bg-post-img">
             <span />
-            <img src={`img${post}.jpg`} alt="img" />
+            <img src={img ? img : `noimage.jpg`} alt="img" />
           </div>
           <header>
-            <h3>Lorem, ipsum dolor.</h3>
+            <h3>{title}</h3>
           </header>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim earum
-            totam tenetur veniam architecto nam pariatur, numquam natus
-            reprehenderit animi sapiente atque modi molestias rem, eius quis
-            magnam, perspiciatis iste.
-          </p>
-          <button>Read more</button>
+          <p>{`${desc} ${desc} ${desc} ${desc}`}</p>
+          <Link to={`post/${index}`}>
+            <button>Read more</button>
+          </Link>
         </article>
       ))}
     </div>
