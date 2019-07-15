@@ -3,11 +3,14 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./LatestPosts.scss";
 
-const LatestPosts = ({ posts }) => {
-  // console.log(posts[0])
+const LatestPosts = ({ posts, getComments }) => {
+	const handleGgetComments = id => {
+		getComments(id)
+	}
+
   return (
     <div className="latest-posts-container">
-      {posts.map(({ img, desc, title }, index) => (
+      {posts.map(({ _id, img, desc, title }, index) => (
         <article key={index}>
           <div className="bg-post-img">
             <span />
@@ -18,7 +21,7 @@ const LatestPosts = ({ posts }) => {
           </header>
           <p>{`${desc} ${desc} ${desc} ${desc}`}</p>
           <Link to={`post/${index}`}>
-            <button>Read more</button>
+            <button onClick={handleGgetComments.bind(this, _id)}>Read more</button>
           </Link>
         </article>
       ))}

@@ -19,5 +19,6 @@ mongoose
 const port = process.env.PORT || 5000;
 
 app.use("/api/posts", require("./routes/api/posts"));
+app.use("/api/comments", require("./routes/api/comments"));
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

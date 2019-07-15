@@ -8,7 +8,8 @@ class Post extends Component {
   static propTypes = {};
   render() {
     const {
-      posts,
+			posts,
+			comments,
       match: {
         params: { id_post }
       }
@@ -18,7 +19,7 @@ class Post extends Component {
         <section>
           <article className="post">
             {posts.length ? <Article post={posts[+id_post]} /> : false}
-            <Comments />
+            <Comments comments={comments}/>
           </article>
         </section>
       </main>

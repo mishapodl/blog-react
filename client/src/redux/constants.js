@@ -3,3 +3,9 @@ export const POSTS = {
   LOAD_SUCCESS: "LOAD_SUCCESS",
   ERROR: "ERROR"
 };
+
+export const COMMENTS = {
+  LOADING: "LOADING",
+  LOAD_SUCCESS: "LOAD_SUCCESS",
+  ERROR: "ERROR"
+};

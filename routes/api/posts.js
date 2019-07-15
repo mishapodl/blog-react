@@ -9,11 +9,4 @@ router.get("/", (req, res) => {
   });
 });
 
-router.post("/", (req, res) => {
-  const newArticle = new Post({
-    name: req.body.name
-  });
-  newArticle.save().then(posts => res.json(posts));
-});
-
 module.exports = router;
