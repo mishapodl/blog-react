@@ -9,7 +9,7 @@
 div#root > header {
   flex-direction: column;
   @include flex-between;
-  height: 70vh;
+  height: 50vh;
   background-image: url("/banner.jpg");
   background-position: center;
   background-size: cover;

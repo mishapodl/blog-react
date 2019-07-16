@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { loadPosts } from "./redux/actions/index";
 import { News, Post, Header, Footer } from "./containers/index";
+import ScrollToTop from "./containers/ScrollToTop/ScrollToTop";
 import "./App.scss";
 
 class App extends Component {
@@ -13,16 +14,17 @@ class App extends Component {
     return (
       <>
         <Header />
-        <Switch>
-          <Route exact path="/" component={News} />
-          <Route path="/post/:id_post" params={`name`} component={Post} />
-        </Switch>
+        <ScrollToTop>
+          <Switch>
+            <Route exact path="/" component={News} />
+            <Route path="/post/:id_post" params={`name`} component={Post} />
+          </Switch>
+        </ScrollToTop>
         <Footer />
       </>
     );
   }
 }
-
 const AppRoot = withRouter(
   connect(
     null,
