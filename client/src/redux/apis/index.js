@@ -8,7 +8,7 @@ export const fetchGetPosts = async () => {
   return fetchError(posts);
 };
 
-export const fetchGetComments = async id => {
-  let comments = await axios.get(`/api/comments/${id}`);
+export const fetchGetComments = async idPost => {
+	let comments = await axios.get(`/api/comments/${idPost}`);
   return fetchError(comments);
 };

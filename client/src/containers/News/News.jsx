@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { loadPosts, getComments } from "../../redux/actions/index";
+import { loadPosts, getIdPost } from "../../redux/actions/index";
 import {
   AsideBarPosts,
   LatestPosts,
@@ -10,7 +10,7 @@ import "./News.scss";
 
 class News extends Component {
   render() {
-    const { posts, isLoadPosts, getComments } = this.props;
+    const { posts, isLoadPosts, getIdPost } = this.props;
     return (
       <main>
         <PopularPosts />
@@ -22,7 +22,7 @@ class News extends Component {
 
           <div className="container">
             {isLoadPosts ? (
-              <LatestPosts posts={posts} getComments={getComments} />
+              <LatestPosts posts={posts} getIdPost={getIdPost} />
             ) : (
               "Loading"
             )}
@@ -41,5 +41,5 @@ const mapStateToProps = ({ posts, isLoad: { isLoadPosts } }) => ({
 
 export default connect(
   mapStateToProps,
-  { loadPosts, getComments }
+  { loadPosts, getIdPost }
 )(News);

@@ -4,5 +4,5 @@ import { workGetPosts, workGetComments } from "./saga-posts";
 
 export default function* watchSaga() {
   yield takeEvery(POSTS.LOADING, workGetPosts);
-  yield takeEvery(COMMENTS.LOADING, workGetComments);
+  yield takeEvery(COMMENTS.ID_POST, workGetComments);
 }

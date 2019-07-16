@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./LatestPosts.scss";
 
-const LatestPosts = ({ posts, getComments }) => {
-	const handleGgetComments = id => {
-		getComments(id)
+const LatestPosts = ({ posts, getIdPost }) => {
+	const handleGetComments = id => {
+		getIdPost(id)
 	}
 
   return (
@@ -21,7 +21,7 @@ const LatestPosts = ({ posts, getComments }) => {
           </header>
           <p>{`${desc} ${desc} ${desc} ${desc}`}</p>
           <Link to={`post/${index}`}>
-            <button onClick={handleGgetComments.bind(this, _id)}>Read more</button>
+            <button onClick={handleGetComments.bind(this, _id)}>Read more</button>
           </Link>
         </article>
       ))}

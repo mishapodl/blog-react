@@ -1,3 +1,3 @@
-import { loadPosts, getComments } from "./actions-posts";
+import { loadPosts, getIdPost } from "./actions-posts";
 
-export { loadPosts, getComments };
+export { loadPosts, getIdPost };
