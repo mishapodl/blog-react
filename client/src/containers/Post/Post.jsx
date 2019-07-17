@@ -8,8 +8,8 @@ class Post extends Component {
   static propTypes = {};
   render() {
     const {
-			posts,
-			comments,
+      posts,
+      comments,
       match: {
         params: { id_post }
       }
@@ -19,7 +19,7 @@ class Post extends Component {
         <section>
           <article className="post">
             {posts.length ? <Article post={posts[+id_post]} /> : false}
-            <Comments comments={comments}/>
+            <Comments comments={comments} />
           </article>
         </section>
       </main>
@@ -27,8 +27,9 @@ class Post extends Component {
   }
 }
 
-const mapStateToProps = ({ posts }) => ({
-  posts
+const mapStateToProps = ({ posts, comments }) => ({
+  posts,
+  comments
 });
 
 export default connect(

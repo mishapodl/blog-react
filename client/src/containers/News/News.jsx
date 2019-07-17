@@ -24,7 +24,9 @@ class News extends Component {
             {isLoadPosts ? (
               <LatestPosts posts={posts} getIdPost={getIdPost} />
             ) : (
-              "Loading"
+              <div className="spinner">
+                <div>o</div>
+              </div>
             )}
             {isLoadPosts ? <AsideBarPosts posts={posts} /> : "Loading"}
           </div>
