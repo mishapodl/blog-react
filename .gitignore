@@ -8,6 +8,7 @@
 /layout-blog
 ./client
 /terminalylayout.html
+.vscode
 
 # testing
 /coverage
