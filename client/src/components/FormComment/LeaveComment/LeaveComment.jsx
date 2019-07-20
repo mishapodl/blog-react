@@ -4,13 +4,13 @@ import "./LeaveComment.scss";
 
 const LeaveComment = ({ onSubmit, onChange }) => (
   <form onSubmit={onSubmit}>
-    <label htmlFor="userSComment" />
+    <label htmlFor="body" />
     <textarea
-      name="textComment"
-      id="userSComment"
+      name="body"
+      id="body"
       cols="30"
       rows="10"
-      placeholder="Leave your comment..."
+			placeholder="Leave your comment..."
       onChange={onChange}
     />
     <input type="submit" value="Submit" />

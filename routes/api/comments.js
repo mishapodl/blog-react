@@ -9,12 +9,12 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  const { postId, authId, authName, textComment } = req.body.comment;
+  const { postId, authId, authName, body } = req.body.comment;
   console.log(req.body.comment);
   const newComment = new Comment({
     postId,
     authId,
-    desc: textComment[0],
+    body,
     authName
   });
 

@@ -10,7 +10,7 @@ const CommentSchema = new Schema({
     type: String,
     default: ""
   },
-  desc: {
+  body: {
     type: String,
     required: true
   },

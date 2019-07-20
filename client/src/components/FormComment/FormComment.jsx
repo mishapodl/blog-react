@@ -10,7 +10,7 @@ const mapStateToProps = ({}) => ({});
 class FormComment extends Component {
   static propTypes = {};
   state = {
-    textComment: ""
+    body: ""
   };
 
   onChange = e => {
@@ -20,13 +20,13 @@ class FormComment extends Component {
   onSubmit = e => {
     e.preventDefault();
     const { postId } = this.props;
-		const { textComment } = this.state;
-		
+    const { body } = this.state;
+
     const newComment = {
       authId: postId.slice(3, 12),
       postId,
-      authName: 'Michael Podlevskykh',
-      textComment
+      authName: "Michael Podlevskykh",
+      body: body[0]
     };
     this.props.sendComment(newComment);
   };

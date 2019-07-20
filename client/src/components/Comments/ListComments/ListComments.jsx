@@ -2,22 +2,21 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./ListComments.scss";
 
-const ListComments = ({ comments, textComment }) => {
-	console.log(textComment)
+const ListComments = ({ comments }) => {
   return (
     <>
       {comments.length ? (
-        comments.map(({ desc, authName, date }, i) => (
+        comments.map(({ body, authName, date }, i) => (
           <article key={i}>
             <div className="comment-posted">
               <footer>
                 <p>{authName}</p>
               </footer>
-              <span>{date ? date.slice(0, 10) : '2019'}</span>
+              <span>{date ? date.slice(0, 10) : '2019-00-00'}</span>
             </div>
             <div className="comment-content">
               <img src="/" alt="" />
-              <p>{desc ? desc : textComment}</p>
+              <p>{body}</p>
             </div>
           </article>
         ))
