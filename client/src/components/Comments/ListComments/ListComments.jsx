@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./ListComments.scss";
 
-const ListComments = ({ comments }) => {
+const ListComments = ({ comments, textComment }) => {
+	console.log(textComment)
   return (
     <>
       {comments.length ? (
@@ -16,7 +17,7 @@ const ListComments = ({ comments }) => {
             </div>
             <div className="comment-content">
               <img src="/" alt="" />
-              <p>{desc}</p>
+              <p>{desc ? desc : textComment}</p>
             </div>
           </article>
         ))

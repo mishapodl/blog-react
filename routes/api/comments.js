@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-
 const Comment = require("../../models/Comment");
 
 router.get("/:id", (req, res) => {
@@ -9,10 +8,14 @@ router.get("/:id", (req, res) => {
   });
 });
 
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
+  const { postId, authId, authName, textComment } = req.body.comment;
+  console.log(req.body.comment);
   const newComment = new Comment({
-    postId: req.body.postId,
-    desc: req.body.desc
+    postId,
+    authId,
+    desc: textComment[0],
+    authName
   });
 
   newComment.save().then(comment => res.json(comment));

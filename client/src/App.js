@@ -17,7 +17,7 @@ class App extends Component {
         <ScrollToTop>
           <Switch>
             <Route exact path="/" component={News} />
-            <Route path="/post/:id_post" params={`name`} component={Post} />
+            <Route path="/post/:id_post" component={Post} />
           </Switch>
         </ScrollToTop>
         <Footer />

@@ -14,7 +14,6 @@ export const fetchGetComments = async idPost => {
 };
 
 export const fetchSendComment = async comment => {
-  console.log(comment, 'fetch');
   let sendedComment = await axios.post(`/api/comments/`, comment);
   return fetchError(sendedComment);
 };

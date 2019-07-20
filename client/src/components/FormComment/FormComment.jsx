@@ -5,12 +5,12 @@ import { sendComment } from "../../redux/actions/index";
 import LeaveComment from "./LeaveComment/LeaveComment";
 import "./FormComment.scss";
 
-const mapStateToProps = ({ }) => ({});
+const mapStateToProps = ({}) => ({});
 
 class FormComment extends Component {
   static propTypes = {};
   state = {
-    desc: ""
+    textComment: ""
   };
 
   onChange = e => {
@@ -19,14 +19,16 @@ class FormComment extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    const textComment = {
-      postId: this.props.postId,
-      authId: "",
-      desc: console.log(this.state.desc[0])
+    const { postId } = this.props;
+		const { textComment } = this.state;
+		
+    const newComment = {
+      authId: postId.slice(3, 12),
+      postId,
+      authName: 'Michael Podlevskykh',
+      textComment
     };
-    console.log(textComment);
-    this.props.sendComment(textComment);
-
+    this.props.sendComment(newComment);
   };
 
   render() {

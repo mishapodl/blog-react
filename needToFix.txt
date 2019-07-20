@@ -1,0 +1,6 @@
+1) client\src\redux\reducers\reducer-comments.js
++--------------------------------------------------
+|	 `case COMMENTS.SEND_SUCCESS:`
+|     `return [state[0].concat(action.comment)];`
++--------------------------------------------------
+

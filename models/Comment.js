@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const CommentSchema = new Schema({
   postId: {
     type: String,
-    required: false
+    required: true
   },
   authId: {
     type: String,
@@ -12,9 +12,9 @@ const CommentSchema = new Schema({
   },
   desc: {
     type: String,
-    required: false
+    required: true
   },
-  name: {
+  authName: {
     type: String,
     default: ""
   },

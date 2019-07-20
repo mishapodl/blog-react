@@ -5,7 +5,6 @@ import {
   setPosts,
   setErrorComments,
   setComments,
-  sendComment,
 } from "../actions/actions-posts";
 
 const getIdPost = state => state.idPost;
@@ -31,7 +30,6 @@ export function* workGetComments() {
 
 export function* workPostComment(comment) {
   try {
-    console.log(comment, 'saga');
     yield call(fetchSendComment, comment);
     // yield put(sendComment(comments));
   } catch (err) {
