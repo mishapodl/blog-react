@@ -9,6 +9,12 @@ export const fetchGetPosts = async () => {
 };
 
 export const fetchGetComments = async idPost => {
-	let comments = await axios.get(`/api/comments/${idPost}`);
+  let comments = await axios.get(`/api/comments/${idPost}`);
   return fetchError(comments);
+};
+
+export const fetchSendComment = async comment => {
+  console.log(comment, 'fetch');
+  let sendedComment = await axios.post(`/api/comments/`, comment);
+  return fetchError(sendedComment);
 };

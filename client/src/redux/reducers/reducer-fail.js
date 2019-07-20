@@ -1,9 +1,9 @@
 import { POSTS, COMMENTS } from "../constants";
 import { combineReducers } from "redux";
 
-const reducerFailPosts = (state = null, action) => {
+const reducerFailLoadPosts = (state = null, action) => {
   switch (action.type) {
-		case POSTS.ERROR:
+    case POSTS.ERROR:
       return action.error;
     case POSTS.LOADING:
     case POSTS.LOAD_SUCCESS:
@@ -13,9 +13,9 @@ const reducerFailPosts = (state = null, action) => {
   }
 };
 
-const reducerFailComments = (state = null, action) => {
+const reducerFailLoadComments = (state = null, action) => {
   switch (action.type) {
-		case COMMENTS.ERROR:
+    case COMMENTS.LOAD_ERROR:
       return action.error;
     case COMMENTS.LOADING:
     case COMMENTS.LOAD_SUCCESS:
@@ -24,9 +24,22 @@ const reducerFailComments = (state = null, action) => {
       return state;
   }
 };
+
+const reducerFailSendComment = (state = null, action) => {
+  switch (action.type) {
+    case COMMENTS.SEND_ERROR:
+      return action.error;
+    case COMMENTS.LOADING:
+    case COMMENTS.SEND_SUCCESS:
+      return null;
+    default:
+      return state;
+  }
+};
 const faildReducer = combineReducers({
-  errorPosts: reducerFailPosts,
-  errorComments: reducerFailComments,
+  errorLoadPosts: reducerFailLoadPosts,
+  errorLoadComments: reducerFailLoadComments,
+  errorSendComment: reducerFailSendComment
 });
 
 export default faildReducer;

@@ -8,7 +8,13 @@ import {
 } from "../../components/index";
 import "./News.scss";
 
+const mapStateToProps = ({ posts, isLoad: { isLoadPosts } }) => ({
+  posts,
+  isLoadPosts
+});
+
 class News extends Component {
+  static propTypes = {};
   render() {
     const { posts, isLoadPosts, getIdPost } = this.props;
     return (
@@ -24,9 +30,7 @@ class News extends Component {
             {isLoadPosts ? (
               <LatestPosts posts={posts} getIdPost={getIdPost} />
             ) : (
-              <div className="spinner">
-                <div>o</div>
-              </div>
+              <>{/* <Spiner /> */}</>
             )}
             {isLoadPosts ? <AsideBarPosts posts={posts} /> : "Loading"}
           </div>
@@ -35,11 +39,6 @@ class News extends Component {
     );
   }
 }
-
-const mapStateToProps = ({ posts, isLoad: { isLoadPosts } }) => ({
-  posts,
-  isLoadPosts
-});
 
 export default connect(
   mapStateToProps,

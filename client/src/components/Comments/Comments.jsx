@@ -1,25 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { FormComment } from "../index";
+import ListComments from "./ListComments/ListComments";
+
 import "./Comments.scss";
 
-const Comments = ({ comments }) => {
+const Comments = ({ comments, post }) => {
   return (
     <section className="comments">
       <h3>Comments</h3>
-      {comments.map(({ desc, authName }, i) => (
-        <article key={i}>
-          <div className="comment-posted">
-            <footer>
-              <p>{authName}</p>
-            </footer>
-            <span>May 6</span>
-          </div>
-          <div className="comment-content">
-            <img src="/" alt="" />
-            <p>{desc}</p>
-          </div>
-        </article>
-      ))}
+      <ListComments comments={comments} />
+      <FormComment postId={post._id} />
     </section>
   );
 };

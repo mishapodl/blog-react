@@ -6,6 +6,7 @@ import LatestPosts from "./LatestPosts/LatestPosts";
 import Navigation from "./Navigation/Navigation";
 import PopularPosts from "./PopularPosts/PopularPosts";
 import Logo from "./Logo/Logo";
+import FormComment from "./FormComment/FormComment";
 
 export {
   Article,
@@ -15,5 +16,6 @@ export {
   LatestPosts,
   Navigation,
   PopularPosts,
-  Logo
+  Logo,
+  FormComment
 };

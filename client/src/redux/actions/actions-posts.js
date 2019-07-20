@@ -1,6 +1,6 @@
 import { POSTS, COMMENTS } from "../constants";
 
-// ACTIONS FOR POSTS
+// GET POSTS
 export const loadPosts = () => ({
   type: POSTS.LOADING
 });
@@ -15,14 +15,9 @@ export const setErrorPosts = error => ({
   error
 });
 
-// ACTIONS FOR COMMENTS
+// GET COMMENTS
 export const loadComments = () => ({
   type: COMMENTS.LOADING
-});
-
-export const getIdPost = id => ({
-  type: COMMENTS.ID_POST,
-  id
 });
 
 export const setComments = payload => ({
@@ -31,6 +26,26 @@ export const setComments = payload => ({
 });
 
 export const setErrorComments = error => ({
-  type: COMMENTS.ERROR,
+  type: COMMENTS.SEND_ERROR,
   error
+});
+
+export const getIdPost = id => ({
+  type: COMMENTS.ID_POST,
+  id
+});
+
+// SEEND COMMENT
+export const sendingComment = () => ({
+  type: COMMENTS.SENDING
+});
+
+export const setErrorSendComment = error => ({
+  type: COMMENTS.SEND_ERROR,
+  error
+});
+
+export const sendComment = comment => ({
+  type: COMMENTS.SEND_SUCCESS,
+  comment
 });

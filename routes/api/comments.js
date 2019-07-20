@@ -9,4 +9,13 @@ router.get("/:id", (req, res) => {
   });
 });
 
+router.post('/', (req, res) => {
+  const newComment = new Comment({
+    postId: req.body.postId,
+    desc: req.body.desc
+  });
+
+  newComment.save().then(comment => res.json(comment));
+});
+
 module.exports = router;

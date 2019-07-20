@@ -17,12 +17,3 @@ export function reducerIdPostForComments(state = null, action) {
       return state;
   }
 }
-
-export function reducerComments(state = [], action) {
-  switch (action.type) {
-    case COMMENTS.LOAD_SUCCESS:
-      return [...action.payload];
-    default:
-      return state;
-  }
-}
