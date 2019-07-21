@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import { loadPosts, getIdPost } from "../../redux/actions/index";
 import {
   AsideBarPosts,
@@ -14,7 +15,6 @@ const mapStateToProps = ({ posts, isLoad: { isLoadPosts } }) => ({
 });
 
 class News extends Component {
-  static propTypes = {};
   render() {
     const { posts, isLoadPosts, getIdPost } = this.props;
     return (
@@ -39,6 +39,12 @@ class News extends Component {
     );
   }
 }
+
+News.propTypes = {
+  posts: PropTypes.array.isRequired,
+  isLoadPosts: PropTypes.bool.isRequired,
+  getIdPost: PropTypes.func
+};
 
 export default connect(
   mapStateToProps,

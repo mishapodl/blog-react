@@ -12,7 +12,6 @@ const mapStateToProps = ({ posts, comments, isLoad }) => ({
 });
 
 class Post extends Component {
-  static propTypes = {};
   render() {
     const {
       posts,
@@ -49,6 +48,17 @@ class Post extends Component {
   }
 }
 
+Post.propTypes = {
+  posts: PropTypes.array.isRequired,
+  comments: PropTypes.object,
+  isLoad: PropTypes.object.isRequired,
+  id_post: PropTypes.string.isRequired,
+  deleteComment: PropTypes.func.isRequired
+};
+
+Post.defaultProps = {
+	id_post: ''
+}
 export default connect(
   mapStateToProps,
   { deleteComment }

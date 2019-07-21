@@ -31,7 +31,9 @@ const LatestPosts = ({ posts, getIdPost }) => {
   );
 };
 
-LatestPosts.propTypes = {};
-LatestPosts.defaultProps = {};
+LatestPosts.propTypes = {
+  posts: PropTypes.array,
+  getIdPost: PropTypes.func
+};
 
 export default LatestPosts;

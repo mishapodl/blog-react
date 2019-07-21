@@ -8,7 +8,6 @@ import "./FormComment.scss";
 const mapStateToProps = ({}) => ({});
 
 class FormComment extends Component {
-  static propTypes = {};
   state = {
     body: ""
   };
@@ -40,6 +39,11 @@ class FormComment extends Component {
     );
   }
 }
+
+FormComment.propTypes = {
+  postId: PropTypes.string.isRequired,
+  sendComment: PropTypes.func.isRequired
+};
 
 export default connect(
   mapStateToProps,

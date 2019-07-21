@@ -14,14 +14,18 @@ const Article = ({ post: { img, bodyPost, title, desc } }) => {
       <div className="post-desc">
         <h3>{desc}</h3>
         <p>{bodyPost}</p>
-				<h3>{title}</h3>
+        <h3>{title}</h3>
         <p>{bodyPost}</p>
       </div>
       <button>Leave comment</button>
     </>
   );
 };
-Article.propTypes = {};
-Article.defaultProps = {};
+Article.propTypes = {
+  img: PropTypes.string,
+  bodyPost: PropTypes.string,
+  title: PropTypes.string,
+  desc: PropTypes.string
+};
 
 export default Article;

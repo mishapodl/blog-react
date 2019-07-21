@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./CardPost.scss";
 
-const CardPost = ({}) =>
+const CardPost = ({ posts }) =>
   [1, 2, 3].map((post, i) => (
     <article key={i}>
       <figure>
@@ -21,7 +21,8 @@ const CardPost = ({}) =>
     </article>
   ));
 
-CardPost.propTypes = {};
-CardPost.defaultProps = {};
+CardPost.propTypes = {
+	posts: PropTypes.array
+};
 
 export default CardPost;

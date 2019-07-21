@@ -40,7 +40,9 @@ const ListComments = ({ comments, deleteComment }) => {
   );
 };
 
-ListComments.propTypes = {};
-ListComments.defaultProps = {};
+ListComments.propTypes = {
+  comments: PropTypes.array,
+  deleteComment: PropTypes.func
+};
 
 export default ListComments;

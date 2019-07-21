@@ -28,7 +28,9 @@ const Navigation = ({ showListItem }) => {
   );
 };
 
-Navigation.propTypes = {};
+Navigation.propTypes = {
+	showListItem: PropTypes.bool.isRequired
+};
 
 Navigation.defaultProps = {
   showListItem: true

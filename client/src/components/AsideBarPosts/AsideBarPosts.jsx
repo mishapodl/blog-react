@@ -31,7 +31,8 @@ const AsideBarPosts = ({ posts }) => {
   );
 };
 
-AsideBarPosts.propTypes = {};
-AsideBarPosts.defaultProps = {};
+AsideBarPosts.propTypes = {
+	posts: PropTypes.array
+};
 
 export default AsideBarPosts;

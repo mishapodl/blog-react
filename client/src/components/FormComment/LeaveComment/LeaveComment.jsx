@@ -17,7 +17,9 @@ const LeaveComment = ({ onSubmit, onChange }) => (
   </form>
 );
 
-LeaveComment.propTypes = {};
-LeaveComment.defaultProps = {};
+LeaveComment.propTypes = {
+	onSubmit: PropTypes.func.isRequired, 
+	onChange: PropTypes.func.isRequired
+};
 
 export default LeaveComment;

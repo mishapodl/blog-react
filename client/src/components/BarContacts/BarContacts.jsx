@@ -39,8 +39,9 @@ const BarContacts = ({ showHaderSection }) => {
   );
 };
 
-BarContacts.propTypes = {};
-
+BarContacts.propTypes = {
+  showHaderSection: PropTypes.bool.isRequired
+};
 BarContacts.defaultProps = {
   showHaderSection: false
 };
