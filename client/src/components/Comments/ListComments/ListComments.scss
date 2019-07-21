@@ -11,7 +11,6 @@ $background-color-icons: #000;
 $text-color-main-H2: #777;
 $border-color-main-H2: #000;
 
-
 @mixin border-header {
   display: inline-block;
   padding: 0.2rem 0.5rem;
@@ -20,7 +19,7 @@ $border-color-main-H2: #000;
 @mixin flex-around {
   display: flex;
   align-items: center;
-  justify-content: space-around; 
+  justify-content: space-around;
 }
 @mixin flex-between {
   display: flex;
@@ -29,7 +28,7 @@ $border-color-main-H2: #000;
 }
 @mixin h2-on-page {
   text-align: center;
-  margin: 1.5rem 0 1.5rem 0 ;
+  margin: 1.5rem 0 1.5rem 0;
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
@@ -75,6 +74,19 @@ section.comments > article {
         min-height: 70px;
         width: calc(100% - 90px);
         line-height: 1.5rem;
+      }
+      > button {
+        height: 25px;
+        width: 25px;
+        margin: auto 0px 0 0;
+        border: 0;
+        border-radius: 40%;
+        background-color: #f35d5d;
+        cursor: pointer;
+        transition: .2s;
+        &:hover {
+          border-radius: 0;
+        }
       }
     }
   }

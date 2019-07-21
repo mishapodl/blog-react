@@ -19,7 +19,6 @@ export const fetchSendComment = async comment => {
 };
 
 export const fetchDeleteComment = async idComment => {
-	console.log('delte', idComment)
-  let result = await axios.post(`/api/comments/${idComment}`);
+  let result = await axios.delete(`/api/comments/${idComment}`);
   return fetchError(result);
 };

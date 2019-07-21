@@ -50,9 +50,7 @@ export const sendComment = comment => ({
   comment
 });
 
-export const deleteComment = id => {
-  return {
-    type: COMMENTS.DELETE_COMMENT,
-    id
-  };
-};
+export const deleteComment = id => ({
+  type: COMMENTS.DELETE_COMMENT,
+  id
+});

@@ -16,11 +16,10 @@ export function reducerComments(state = initialState, action) {
         ...state,
         comments: [action.comment, ...state.comments]
       };
-    case COMMENTS.DELETE_SUCCESS:
-      console.log("reducer");
+    case COMMENTS.DELETE_COMMENT:
       return {
         ...state,
-        comments: [state.comments.filter(comment => comment._id !== action.id)]
+        comments: state.comments.filter(comment => comment._id !== action.id)
       };
     default:
       return state;

@@ -9,13 +9,15 @@ const Comments = ({ comments, post, deleteComment }) => {
   return (
     <section className="comments">
       <h3>Comments</h3>
-      <ListComments comments={comments} deleteComment={deleteComment}/>
+      <ListComments comments={comments} deleteComment={deleteComment} />
       <FormComment postId={post._id} />
     </section>
   );
 };
 
-Comments.propTypes = {};
+Comments.propTypes = {
+  
+};
 Comments.defaultProps = {};
 
 export default Comments;

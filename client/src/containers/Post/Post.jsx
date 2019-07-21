@@ -18,12 +18,12 @@ class Post extends Component {
       posts,
       comments: { comments },
       isLoad: { isLoadPosts, isLoadComments },
+      deleteComment,
       match: {
         params: { id_post }
       }
     } = this.props;
     const currentPost = posts[+id_post];
-		console.log(comments)
     return (
       <main>
         <section>
@@ -32,7 +32,11 @@ class Post extends Component {
               <>
                 <Article post={currentPost} />
                 {isLoadComments && (
-                  <Comments comments={comments} post={currentPost} deleteComment={deleteComment}/>
+                  <Comments
+                    comments={comments}
+                    post={currentPost}
+                    deleteComment={deleteComment}
+                  />
                 )}
               </>
             ) : (
