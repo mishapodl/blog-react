@@ -1,11 +1,27 @@
 import { COMMENTS } from "../constants";
 
-export function reducerComments(state = [], action) {
+const initialState = {
+  comments: []
+};
+
+export function reducerComments(state = initialState, action) {
   switch (action.type) {
     case COMMENTS.LOAD_SUCCESS:
-      return [action.payload];
+      return {
+        ...state,
+        comments: action.payload
+      };
     case COMMENTS.SEND_SUCCESS:
-      return [state[0].concat(action.comment)];
+      return {
+        ...state,
+        comments: [action.comment, ...state.comments]
+      };
+    case COMMENTS.DELETE_SUCCESS:
+      console.log("reducer");
+      return {
+        ...state,
+        comments: [state.comments.filter(comment => comment._id !== action.id)]
+      };
     default:
       return state;
   }

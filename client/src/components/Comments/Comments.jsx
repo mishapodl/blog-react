@@ -5,11 +5,11 @@ import ListComments from "./ListComments/ListComments";
 
 import "./Comments.scss";
 
-const Comments = ({ comments, post }) => {
+const Comments = ({ comments, post, deleteComment }) => {
   return (
     <section className="comments">
       <h3>Comments</h3>
-      <ListComments comments={comments} />
+      <ListComments comments={comments} deleteComment={deleteComment}/>
       <FormComment postId={post._id} />
     </section>
   );

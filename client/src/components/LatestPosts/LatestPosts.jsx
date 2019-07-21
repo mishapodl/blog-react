@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import "./LatestPosts.scss";
 
 const LatestPosts = ({ posts, getIdPost }) => {
-	const handleGetComments = id => {
-		getIdPost(id)
-	}
+  const handleGetComments = id => {
+    getIdPost(id);
+  };
 
   return (
     <div className="latest-posts-container">
@@ -21,7 +21,9 @@ const LatestPosts = ({ posts, getIdPost }) => {
           </header>
           <p>{`${desc} ${desc} ${desc} ${desc}`}</p>
           <Link to={`post/${index}`}>
-            <button onClick={handleGetComments.bind(this, _id)}>Read more</button>
+            <button onClick={handleGetComments.bind(this, _id)}>
+              Read more
+            </button>
           </Link>
         </article>
       ))}

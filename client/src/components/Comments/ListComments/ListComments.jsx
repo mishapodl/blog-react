@@ -2,11 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./ListComments.scss";
 
-const ListComments = ({ comments }) => {
+const ListComments = ({ comments, deleteComment }) => {
+	const handleDeleteComment = id => {
+		deleteComment(id)
+	}
   return (
     <>
       {comments.length ? (
-        comments.map(({ body, authName, date }, i) => (
+        comments.map(({ _id, body, authName, date }, i) => (
           <article key={i}>
             <div className="comment-posted">
               <footer>
@@ -18,6 +21,7 @@ const ListComments = ({ comments }) => {
               <img src="/" alt="" />
               <p>{body}</p>
             </div>
+						<button onClick={handleDeleteComment.bind(null, _id)}>X</button>
           </article>
         ))
       ) : (

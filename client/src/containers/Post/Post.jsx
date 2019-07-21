@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { deleteComment } from "../../redux/actions/index";
 import { Comments, Article } from "../../components/index";
 import "./Post.scss";
 
@@ -15,14 +16,14 @@ class Post extends Component {
   render() {
     const {
       posts,
-      comments,
+      comments: { comments },
       isLoad: { isLoadPosts, isLoadComments },
       match: {
         params: { id_post }
       }
     } = this.props;
     const currentPost = posts[+id_post];
-
+		console.log(comments)
     return (
       <main>
         <section>
@@ -31,7 +32,7 @@ class Post extends Component {
               <>
                 <Article post={currentPost} />
                 {isLoadComments && (
-                  <Comments comments={comments[0]} post={currentPost} />
+                  <Comments comments={comments} post={currentPost} deleteComment={deleteComment}/>
                 )}
               </>
             ) : (
@@ -46,5 +47,5 @@ class Post extends Component {
 
 export default connect(
   mapStateToProps,
-  null
+  { deleteComment }
 )(Post);
