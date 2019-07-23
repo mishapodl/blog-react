@@ -1,27 +1,24 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
-  postId: {
+const CommentSchema = new Schema({
+  name: {
     type: String,
     required: true
   },
-  authId: {
+  email: {
+    type: String,
+    default: "",
+    unique: true
+  },
+  password: {
     type: String,
     default: ""
   },
-  body: {
-    type: String,
-    required: true
-  },
-  authName: {
-    type: String,
-    default: ""
-  },
-  date: {
+  registr_date: {
     type: Date,
     default: Date.now
   }
 });
 
-module.exports = User = mongoose.model("users", UserSchema);
+module.exports = Comment = mongoose.model("comments", CommentSchema);
