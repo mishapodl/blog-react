@@ -5,8 +5,6 @@ import { sendComment } from "../../redux/actions/index";
 import LeaveComment from "./LeaveComment/LeaveComment";
 import "./FormComment.scss";
 
-const mapStateToProps = ({}) => ({});
-
 class FormComment extends Component {
   state = {
     body: ""
@@ -46,6 +44,6 @@ FormComment.propTypes = {
 };
 
 export default connect(
-  mapStateToProps,
+  null,
   { sendComment }
 )(FormComment);
