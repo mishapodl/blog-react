@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Switch, Route, withRouter } from "react-router-dom";
-import { loadPosts, getIdPost } from "./redux/actions/index";
+import { loadPosts, loadUser } from "./redux/actions/index";
 import { News, Post, Header, Footer } from "./containers/index";
 import ScrollToTop from "./containers/scrollToTop/scrollToTop";
 import "./App.scss";
 
 class App extends Component {
   componentDidMount() {
+    this.props.loadUser();
     this.props.loadPosts();
   }
   render() {
@@ -28,7 +29,7 @@ class App extends Component {
 const AppRoot = withRouter(
   connect(
     null,
-    { loadPosts, getIdPost }
+    { loadPosts, loadUser }
   )(App)
 );
 
