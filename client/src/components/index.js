@@ -7,6 +7,7 @@ import Navigation from "./Navigation/Navigation";
 import PopularPosts from "./PopularPosts/PopularPosts";
 import Logo from "./Logo/Logo";
 import FormComment from "./FormComment/FormComment";
+import RegisterModal from "./auth/RegisterModal/RegisterModal";
 
 export {
   Article,
@@ -17,5 +18,6 @@ export {
   Navigation,
   PopularPosts,
   Logo,
-  FormComment
+	FormComment,
+	RegisterModal
 };

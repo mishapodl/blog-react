@@ -4,6 +4,6 @@ import {
   sendComment,
   deleteComment
 } from "./actions-posts";
-import { loadUser } from "./actions-auth";
+import { loadUser, register } from "./actions-auth";
 
-export { loadPosts, getIdPost, sendComment, deleteComment, loadUser };
+export { loadPosts, getIdPost, sendComment, deleteComment, loadUser, register };

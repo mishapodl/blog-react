@@ -6,6 +6,10 @@ import LeaveComment from "./LeaveComment/LeaveComment";
 import "./FormComment.scss";
 
 class FormComment extends Component {
+  static propTypes = {
+    postId: PropTypes.string.isRequired,
+    sendComment: PropTypes.func.isRequired
+  };
   state = {
     body: ""
   };
@@ -37,11 +41,6 @@ class FormComment extends Component {
     );
   }
 }
-
-FormComment.propTypes = {
-  postId: PropTypes.string.isRequired,
-  sendComment: PropTypes.func.isRequired
-};
 
 export default connect(
   null,

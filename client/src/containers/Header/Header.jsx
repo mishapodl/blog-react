@@ -1,5 +1,10 @@
 import React from "react";
-import { Logo, Navigation, BarContacts } from "../../components/index";
+import {
+  Logo,
+  Navigation,
+  BarContacts,
+  RegisterModal
+} from "../../components/index";
 import "./Header.scss";
 
 const Header = () => {
@@ -8,6 +13,7 @@ const Header = () => {
       <div>
         <Logo />
         <Navigation />
+        <RegisterModal />
       </div>
       <h1>Top blog in the world!</h1>
       <BarContacts />
