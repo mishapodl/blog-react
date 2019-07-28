@@ -3,7 +3,9 @@ import {
   Logo,
   Navigation,
   BarContacts,
-  RegisterModal
+  RegisterModal,
+	Logout,
+	Login
 } from "../../components/index";
 import "./Header.scss";
 
@@ -13,7 +15,11 @@ const Header = () => {
       <div>
         <Logo />
         <Navigation />
-        <RegisterModal />
+        <div className="auth-panel">
+          <RegisterModal />
+          <Logout />
+          <Login />
+        </div>
       </div>
       <h1>Top blog in the world!</h1>
       <BarContacts />

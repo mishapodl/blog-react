@@ -11,7 +11,6 @@ router.get("/:id", (req, res) => {
 
 router.post("/", auth, (req, res) => {
   const { postId, authId, authName, body } = req.body.comment;
-  console.log(req.body.comment);
   const newComment = new Comment({
     postId,
     authId,

@@ -1,31 +1,48 @@
-import { put, call /* select */ } from "redux-saga/effects";
-import axios from "axios";
-// import { returnErrors } from "../actions/actions-errors";
-import { loadUser, authError, userLoaded } from "../actions/actions-auth";
-// import { setErrorPosts } from "../actions/actions-posts";
+import { put, call } from "redux-saga/effects";
+import {
+  loadUser,
+  authError,
+  userLoaded,
+  registerSuccess,
+  loginSuccess
+} from "../actions/actions-auth";
+import {
+  fetchRegister,
+  fetchLoadUser,
+  fetchLoginUser
+} from "../apis/index";
+
+
+const config = {
+  headers: {
+    "Content-type": "application/json"
+  }
+};
 
 export function* workLoadUser() {
   try {
     yield call(loadUser);
-    const result = yield axios.get("/api/auth/user", tokenConfig());
+    const result = yield call(fetchLoadUser);
     yield put(userLoaded(result));
+  } catch (err) {
+    yield put(authError());
+  }
+}
+
+export function* workRegisterUser(body) {
+  try {
+    const result = yield call(fetchRegister, body.body, config);
+    yield put(registerSuccess(result));
   } catch (result) {
     yield put(authError());
   }
 }
 
-export const tokenConfig = () => {
-  const token = state => state.auth.token;
-
-  const config = {
-    headers: {
-      "Content-type": "application/json"
-    }
-  };
-
-  if (token) {
-    config.headers["x-auth-token"] = token;
+export function* workLoginUser(body) {
+  try {
+    const result = yield call(fetchLoginUser, body.body, config);
+    yield put(loginSuccess(result));
+  } catch (result) {
+    yield put(authError());
   }
-
-  return config;
-};
+}

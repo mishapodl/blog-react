@@ -9,10 +9,23 @@ import {
   setErrorPosts,
   setPosts,
   setErrorComments,
-  setComments,
+  setComments
 } from "../actions/actions-posts";
 
 const getIdPost = state => state.idPost;
+const getToken = state => state.auth.token;
+
+const tokenConfig = token => {
+  const config = {
+    headers: {
+      "Content-type": "application/json"
+    }
+  };
+  if (token) {
+    config.headers["x-auth-token"] = token;
+  }
+  return config;
+};
 
 export function* workGetPosts() {
   try {
@@ -35,7 +48,8 @@ export function* workGetComments() {
 
 export function* workPostComment(comment) {
   try {
-    yield call(fetchSendComment, comment);
+    const token = yield select(getToken);
+    yield call(fetchSendComment, comment, tokenConfig(token));
   } catch (err) {
     yield put(setErrorComments(err));
   }
@@ -43,7 +57,8 @@ export function* workPostComment(comment) {
 
 export function* workDeleteComment(idComment) {
   try {
-    yield call(fetchDeleteComment, idComment.id);
+    const token = yield select(getToken);
+    yield call(fetchDeleteComment, idComment.id, tokenConfig(token));
   } catch (err) {
     yield put(setErrorComments(err));
   }

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { register } from "../../../redux/actions/index";
+import { register } from "../../redux/actions/index";
 import PropTypes from "prop-types";
-import "./RegisterModal.scss";
+import "./Modal.scss";
 
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,
@@ -52,7 +52,8 @@ class RegisterModal extends Component {
           type="text"
           id="name"
           name="name"
-          placeholder="Name"
+					placeholder="Name"
+					autoComplete="new-password"
           onChange={this.onChange}
         />
         <label htmlFor="email" />

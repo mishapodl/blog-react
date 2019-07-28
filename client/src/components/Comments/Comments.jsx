@@ -6,7 +6,6 @@ import ListComments from "./ListComments/ListComments";
 import "./Comments.scss";
 
 const Comments = ({ comments, post, deleteComment }) => {
-	console.log(post, comments )
   return (
     <section className="comments">
       <h3>Comments</h3>
@@ -17,9 +16,9 @@ const Comments = ({ comments, post, deleteComment }) => {
 };
 
 Comments.propTypes = {
-	comments: PropTypes.array, 
-	post: PropTypes.object, 
-	deleteComment: PropTypes.func
+  comments: PropTypes.array,
+  post: PropTypes.object,
+  deleteComment: PropTypes.func
 };
 
 export default Comments;
