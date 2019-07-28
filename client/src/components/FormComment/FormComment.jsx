@@ -7,7 +7,8 @@ import "./FormComment.scss";
 
 class FormComment extends Component {
   static propTypes = {
-    postId: PropTypes.string.isRequired,
+    idPost: PropTypes.string.isRequired,
+    isAuthenticated: PropTypes.bool.isRequired,
     sendComment: PropTypes.func.isRequired
   };
   state = {
@@ -20,15 +21,17 @@ class FormComment extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    const { postId } = this.props;
+    const { idPost, isAuthenticated, user } = this.props;
     const { body } = this.state;
+    if (!isAuthenticated) return;
 
     const newComment = {
-      authId: postId.slice(3, 12),
-      postId,
-      authName: "Michael Podlevskykh",
+      postId: idPost,
+      authId: user.id,
+      authName: user.name,
       body: body[0]
     };
+
     this.props.sendComment(newComment);
   };
 
@@ -42,7 +45,13 @@ class FormComment extends Component {
   }
 }
 
+const mapStateToProps = ({ auth: { isAuthenticated, user }, idPost }) => ({
+  idPost,
+  isAuthenticated,
+  user
+});
+
 export default connect(
-  null,
+  mapStateToProps,
   { sendComment }
 )(FormComment);

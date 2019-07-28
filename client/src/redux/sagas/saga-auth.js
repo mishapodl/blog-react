@@ -6,12 +6,9 @@ import {
   registerSuccess,
   loginSuccess
 } from "../actions/actions-auth";
-import {
-  fetchRegister,
-  fetchLoadUser,
-  fetchLoginUser
-} from "../apis/index";
-
+import { returnErrors } from "../actions/actions-errors";
+import { fetchRegister, fetchLoadUser, fetchLoginUser } from "../apis/index";
+import { USER } from "../constants";
 
 const config = {
   headers: {
@@ -34,7 +31,9 @@ export function* workRegisterUser(body) {
     const result = yield call(fetchRegister, body.body, config);
     yield put(registerSuccess(result));
   } catch (result) {
-    yield put(authError());
+    const { data, status } = result.response;
+    yield call(authError);
+		yield put(returnErrors(data, status, USER.REGISTER_FAIL));
   }
 }
 
@@ -43,6 +42,8 @@ export function* workLoginUser(body) {
     const result = yield call(fetchLoginUser, body.body, config);
     yield put(loginSuccess(result));
   } catch (result) {
-    yield put(authError());
+    const { data, status } = result.response;
+    yield put(returnErrors(data, status, USER.LOGIN_FAIL));
+    yield call(authError);
   }
 }

@@ -5,17 +5,19 @@ import { deleteComment } from "../../redux/actions/index";
 import { Comments, Article } from "../../components/index";
 import "./Post.scss";
 
-const mapStateToProps = ({ posts, comments, isLoad }) => ({
+const mapStateToProps = ({ posts, comments, isLoad, auth }) => ({
   posts,
   comments,
-  isLoad
+  isLoad,
+  auth
 });
 
 class Post extends Component {
   render() {
     const {
       posts,
-      comments: { comments },
+			comments: { comments },
+			auth,
       isLoad: { isLoadPosts, isLoadComments },
       deleteComment,
       match: {
@@ -33,7 +35,8 @@ class Post extends Component {
                 {isLoadComments && (
                   <Comments
                     comments={comments}
-                    post={currentPost}
+										post={currentPost}
+										auth={auth}
                     deleteComment={deleteComment}
                   />
                 )}
@@ -51,14 +54,15 @@ class Post extends Component {
 Post.propTypes = {
   posts: PropTypes.array.isRequired,
   comments: PropTypes.object,
+  auth: PropTypes.object.isRequired,
   isLoad: PropTypes.object.isRequired,
   id_post: PropTypes.string.isRequired,
   deleteComment: PropTypes.func.isRequired
 };
 
 Post.defaultProps = {
-	id_post: ''
-}
+  id_post: ""
+};
 export default connect(
   mapStateToProps,
   { deleteComment }

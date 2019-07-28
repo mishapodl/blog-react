@@ -5,6 +5,7 @@ import {
   deleteComment
 } from "./actions-posts";
 import { loadUser, register, logout, login } from "./actions-auth";
+import { clearErrors } from "./actions-errors";
 
 export {
   loadPosts,
@@ -14,5 +15,6 @@ export {
   loadUser,
   register,
   logout,
-  login
+	login,
+	clearErrors
 };
