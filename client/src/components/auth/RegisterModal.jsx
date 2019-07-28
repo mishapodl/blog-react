@@ -46,44 +46,49 @@ class RegisterModal extends Component {
   render() {
     const { modal } = this.state;
     const registerModal = (
-      <form onSubmit={this.onSubmit}>
-        <label htmlFor="name" />
-        <input
-          type="text"
-          id="name"
-          name="name"
-					placeholder="Name"
-					autoComplete="new-password"
-          onChange={this.onChange}
-        />
-        <label htmlFor="email" />
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Email"
-          onChange={this.onChange}
-        />
-        <label htmlFor="password" />
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Password"
-          onChange={this.onChange}
-        />
-        <br />
-        <button>Submit</button>
-        <br />
-        <button onClick={this.isToggle}>Cancle</button>
-      </form>
+      <div className="regisetr-modal">
+        <div className="bg-overlay" />
+        <form onSubmit={this.onSubmit}>
+          <label htmlFor="name">*Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Name"
+            autoComplete="true"
+            onChange={this.onChange}
+          />
+          <label htmlFor="email">*Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            autoComplete="user name"
+            onChange={this.onChange}
+          />
+          <label htmlFor="password">*Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            autoComplete="current-password"
+            onChange={this.onChange}
+          />
+          <div className="form-btns">
+            <button>Submit</button>
+            <button onClick={this.isToggle}>Cancle</button>
+          </div>
+        </form>
+      </div>
     );
 
     return (
-      <div className="regisetr-modal">
+      <>
         <button onClick={this.isToggle}>Register</button>
         {modal && registerModal}
-      </div>
+      </>
     );
   }
 }

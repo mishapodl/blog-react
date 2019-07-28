@@ -1,0 +1,74 @@
+.auth-panel button {
+  width: 60px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: left;
+}
+
+// .register-modal {
+//   position: absolute;
+//   left: 0;
+//   width: 400px;
+//   border: 1px solid;
+//   top: 0;
+//   display: flex;
+//   justify-content: center;
+// }
+
+.regisetr-modal .bg-overlay {
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: #0000007d;
+  top: 0;
+  z-index: 1;
+}
+.regisetr-modal form {
+  flex-direction: column;
+  align-items: stretch;
+  padding: 2rem 2.5rem;
+  position: absolute;
+  width: 400px;
+  border: 1px solid #fff;
+  top: 25%;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #090a0cd9;
+  z-index: 1;
+}
+
+.regisetr-modal form label {
+  color: #fff;
+  margin: 0.8rem 0 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.regisetr-modal form label:nth-child(1) {
+  margin-top: 0;
+}
+
+.regisetr-modal form input {
+  padding: 0.3rem;
+}
+.regisetr-modal form input::placeholder {
+  text-transform: uppercase;
+}
+
+.regisetr-modal form .form-btns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.regisetr-modal form .form-btns button {
+  text-align: center;
+  padding: 0.5rem 2rem;
+  margin: 1.5rem 0 0;
+  border: 1px solid #fff;
+  width: unset;
+  cursor: pointer;
+}
