@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./LeaveComment.scss";
 
-const LeaveComment = ({ onSubmit, onChange }) => (
+const LeaveComment = ({ onSubmit, onChange, isAuthenticated }) => (
+
   <form onSubmit={onSubmit}>
     <label htmlFor="body" />
     <textarea
@@ -13,7 +14,10 @@ const LeaveComment = ({ onSubmit, onChange }) => (
 			placeholder="Leave your comment..."
       onChange={onChange}
     />
-    <input type="submit" value="Submit" />
+    <div>
+      <input type="submit" value="Submit" />
+      <span className={!isAuthenticated && `active`}>PLEASE, LOGIN FOR LEAVE COMMENT!</span>
+    </div>
   </form>
 );
 

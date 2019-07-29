@@ -1,0 +1,12 @@
+div.form-leave-comment {
+  display: flex;
+  flex-direction: column;
+  > h3 {
+    text-transform: uppercase;
+    color: tomato;
+    margin: 1rem 0;
+    border-bottom: 2px solid;
+    width: 140px;
+    padding: 0 0 0.2em;
+  }
+}

@@ -36,10 +36,11 @@ class FormComment extends Component {
   };
 
   render() {
+    const { isAuthenticated } = this.props;
     return (
-      <div>
+      <div className="form-leave-comment">
         <h3>Leave comment</h3>
-        <LeaveComment onSubmit={this.onSubmit} onChange={this.onChange} />
+        <LeaveComment onSubmit={this.onSubmit} onChange={this.onChange} isAuthenticated={isAuthenticated}/>
       </div>
     );
   }
