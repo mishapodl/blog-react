@@ -36,8 +36,14 @@ export const getIdPost = id => ({
 });
 
 // SEEND COMMENT
-export const sendingComment = () => ({
-  type: COMMENTS.SENDING
+
+export const sendComment = comment => ({
+  type: COMMENTS.SEND,
+  comment
+});
+
+export const sendCommentSuccess = () => ({
+  type: COMMENTS.SEND_SUCCESS
 });
 
 export const setErrorSendComment = error => ({
@@ -45,12 +51,11 @@ export const setErrorSendComment = error => ({
   error
 });
 
-export const sendComment = comment => ({
-  type: COMMENTS.SEND_SUCCESS,
-  comment
-});
-
 export const deleteComment = id => ({
   type: COMMENTS.DELETE_COMMENT,
   id
+});
+
+export const deleteSuccess = () => ({
+  type: COMMENTS.DELETE_SUCCESS
 });

@@ -19,7 +19,6 @@ export const fetchSendComment = async (comment, token) => {
 };
 
 export const fetchDeleteComment = async (idComment, token) => {
-	console.log(token)
   let result = await axios.delete(`/api/comments/${idComment}`, token);
   return fetchError(result);
 };

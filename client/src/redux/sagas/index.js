@@ -21,7 +21,7 @@ import {
 export default function* watchSaga() {
   yield takeEvery(POSTS.LOADING, workGetPosts);
   yield takeEvery(COMMENTS.ID_POST, workGetComments);
-  yield takeEvery(COMMENTS.SEND_SUCCESS, workPostComment);
+  yield takeEvery(COMMENTS.SEND, workPostComment);
   yield takeEvery(COMMENTS.DELETE_COMMENT, workDeleteComment);
   yield takeEvery(USER.LOADING, workLoadUser);
   yield takeEvery(USER.LOGIN, workLoginUser);

@@ -11,15 +11,14 @@ export function reducerComments(state = initialState, action) {
         ...state,
         comments: action.payload
       };
-    case COMMENTS.SEND_SUCCESS:
-      return {
-        ...state,
-        comments: [action.comment, ...state.comments]
-      };
     case COMMENTS.DELETE_COMMENT:
       return {
         ...state,
         comments: state.comments.filter(comment => comment._id !== action.id)
+      };
+    case COMMENTS.DELETE_SUCCESS:
+      return {
+        ...state
       };
     default:
       return state;

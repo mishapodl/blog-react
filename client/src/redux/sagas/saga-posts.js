@@ -9,7 +9,9 @@ import {
   setErrorPosts,
   setPosts,
   setErrorComments,
-  setComments
+  sendCommentSuccess,
+  setComments,
+  deleteSuccess
 } from "../actions/actions-posts";
 
 const getIdPost = state => state.idPost;
@@ -48,8 +50,14 @@ export function* workGetComments() {
 
 export function* workPostComment(comment) {
   try {
+    const idPost = yield select(getIdPost);
     const token = yield select(getToken);
+
     yield call(fetchSendComment, comment, tokenConfig(token));
+    yield put(sendCommentSuccess());
+    
+    const comments = yield call(fetchGetComments, idPost);
+    yield put(setComments(comments));
   } catch (err) {
     yield put(setErrorComments(err));
   }
@@ -59,6 +67,7 @@ export function* workDeleteComment(idComment) {
   try {
     const token = yield select(getToken);
     yield call(fetchDeleteComment, idComment.id, tokenConfig(token));
+    yield put(deleteSuccess());
   } catch (err) {
     yield put(setErrorComments(err));
   }
