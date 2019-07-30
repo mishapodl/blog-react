@@ -12,7 +12,12 @@ div#root > header {
   height: 50vh;
   background-image: url("/banner.jpg");
   background-position: center;
-  background-size: cover;
+  background-size: 110%;
+  background-repeat: no-repeat;
+  transition: 1s;
+  &:hover {
+    background-size: 120%;
+  }
   > h1 {
     text-align: center;
     font-size: 2rem;
@@ -22,6 +27,7 @@ div#root > header {
     color: #fff;
     letter-spacing: 0.15rem;
     padding: 0.5rem 1rem;
+    margin-bottom: 5rem;
   }
   > div {
     @include flex-between;

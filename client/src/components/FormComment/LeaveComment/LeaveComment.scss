@@ -14,10 +14,10 @@ div.form-leave-comment {
       margin: 0px;
       width: 100%;
       height: 80px;
-      transition: 0.2s;
+      transition: all 0.2s;
       font-size: 1em;
-      &::placeholder {
-        transition: 0.2s;
+      &:placeholder {
+        transition: all 0.2s;
         text-transform: uppercase;
       }
       &#body:focus {
@@ -29,7 +29,7 @@ div.form-leave-comment {
         font-size: 1.1em;
         padding: 1rem 1.5em;
 
-        &::placeholder {
+        &:placeholder {
           font-size: 1.1em;
         }
       }
