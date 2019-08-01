@@ -7,6 +7,7 @@ import Navigation from "./Navigation/Navigation";
 import PopularPosts from "./PopularPosts/PopularPosts";
 import Logo from "./Logo/Logo";
 import FormComment from "./FormComment/FormComment";
+import Spinner from "./Spinner/Spinner";
 import Login from "./auth/LoginModal";
 import RegisterModal from "./auth/RegisterModal";
 import Logout from "./auth/Logout";
@@ -23,5 +24,6 @@ export {
   FormComment,
   RegisterModal,
   Logout,
-  Login
+  Login,
+  Spinner
 };

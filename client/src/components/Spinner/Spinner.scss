@@ -1,0 +1,43 @@
+.spinner {
+  text-align: center;
+  &.latest-posts {
+    width: 80%;
+    .spinner-circle {
+      padding-top: 5rem;
+    }
+  }
+  &.aside-posts {
+    width: 20%;
+    margin-left: 1rem;
+    min-width: 250px;
+    > header h4 {
+      text-align: center;
+      margin: 1.5rem 0 1.5rem 0;
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      font-weight: 400;
+      border: 1px solid #000;
+      color: #777;
+      padding: 0.25rem 1rem 0.25rem 1.2rem;
+      padding: 0.25rem 0.5rem 0.25rem 0.7rem;
+      font-size: 1rem;
+      margin: 0 0 1rem 0;
+    }
+    .spinner-circle {
+      padding-top: 2rem;
+    }
+  }
+  .spinner-circle img {
+    animation: spin 3s infinite linear;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -12,11 +12,11 @@ div#root > header {
   height: 50vh;
   background-image: url("/banner.jpg");
   background-position: center;
-  background-size: 110%;
   background-repeat: no-repeat;
+  background-size: auto 100%;
   transition: 1s;
   &:hover {
-    background-size: 120%;
+    background-size: auto 110%;
   }
   > h1 {
     text-align: center;

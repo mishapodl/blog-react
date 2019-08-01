@@ -5,7 +5,8 @@ import { loadPosts, getIdPost } from "../../redux/actions/index";
 import {
   AsideBarPosts,
   LatestPosts,
-  PopularPosts
+  PopularPosts,
+  Spinner
 } from "../../components/index";
 import "./News.scss";
 
@@ -30,9 +31,16 @@ class News extends Component {
             {isLoadPosts ? (
               <LatestPosts posts={posts} getIdPost={getIdPost} />
             ) : (
-              <>{/* <Spiner /> */}</>
+              <Spinner className={`latest-posts`} />
             )}
-            {isLoadPosts ? <AsideBarPosts posts={posts} /> : "Loading"}
+            {isLoadPosts ? (
+              <AsideBarPosts posts={posts} />
+            ) : (
+              <Spinner
+                className={`aside-posts`}
+                header={`Popular last month`}
+              />
+            )}
           </div>
         </section>
       </main>
