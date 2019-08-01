@@ -4,18 +4,17 @@ const router = express.Router();
 const Post = require("../../models/Post");
 
 router.get("/", (req, res) => {
-  Post.find().limit(4).then(posts => {
-    res.json(posts);
-  });
-});
+  const { start = 0, limit = 3 } = req.query;
+  const end = +limit + +start;
 
-// router.get("/posts?limit=:limit", (req, res) => {
-//   Post.find()
-//     .limit(parseInt(req.params.limit))
-//     .then(posts => {
-//       res.json(posts);
-//     })
-//     .catch(err => console.log(err));
-// });
+  Post.find()
+    .skip(start)
+    .limit(end)
+    .sort({ date: -1 }) 
+    .then(posts => {
+      res.json(posts);
+    })
+    .catch(err => console.log(err));
+});
 
 module.exports = router;

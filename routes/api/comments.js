@@ -4,9 +4,11 @@ const Comment = require("../../models/Comment");
 const auth = require("../../middleware/auth");
 
 router.get("/:id", (req, res) => {
-  Comment.find({ postId: req.params.id }).then(comments => {
-    res.json(comments);
-  });
+  Comment.find({ postId: req.params.id })
+    .sort({ date: -1 })
+    .then(comments => {
+      res.json(comments);
+    });
 });
 
 router.post("/", auth, (req, res) => {
