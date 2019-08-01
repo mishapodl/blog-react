@@ -1,0 +1,26 @@
+@import url("../../App.scss");
+
+@mixin border-header {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #fff;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main > section {
+	max-width: 1024px;
+	margin: 0 auto;
+> article.post {
+		width: 100%;
+		margin: 1rem auto 4rem;
+		background-color: rgb(249, 249, 249);
+		padding: 15px 50px;
+		box-shadow: inset 0px -3px 0px 0px #e5e5e5, inset 0px -17px 0px 0px #fff,
+			inset 0px -20px 0px 0px #e5e5e5;
+		padding-bottom: 2rem;
+	}
+}

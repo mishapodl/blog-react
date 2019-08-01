@@ -6,9 +6,8 @@
 .pnp.js
 /.prettierrc
 /layout-blog
-./client
+/client
 /terminalylayout.html
-.vscode
 
 # testing
 /coverage
