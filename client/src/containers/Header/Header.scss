@@ -13,10 +13,11 @@ div#root > header {
   background-image: url("/banner.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  // background-size: auto 100%;
+  background-size: cover;
   transition: 1s;
   &:hover {
-    background-size: auto 110%;
+    // background-size: auto 110%;
   }
   > h1 {
     text-align: center;
