@@ -12,7 +12,7 @@ const Navigation = ({ showListItem }) => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/post">Post</Link>
+            <Link to="/">Post</Link>
           </li>
           {showListItem && (
             <li>
