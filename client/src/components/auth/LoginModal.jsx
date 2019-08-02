@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { login, clearErrors } from "../../redux/actions/index";
+import { Input } from "../UI/index";
 import PropTypes from "prop-types";
 import "./Modal.scss";
 
@@ -66,23 +67,15 @@ class loginModal extends Component {
         <div className="modal-form">
           {msg ? <p>{msg}</p> : null}
           <form onSubmit={this.onSubmit}>
-            <label htmlFor="email">*Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email"
-              autoComplete="user name"
+            <Input
+              type={`email`}
               onChange={this.onChange}
+              autoComplete={`on`}
             />
-            <label htmlFor="password">*Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Password"
-              autoComplete="current-password"
+            <Input
+              type={`password`}
               onChange={this.onChange}
+              autoComplete={`on`}
             />
             <div className="form-btns">
               <button>Submit</button>

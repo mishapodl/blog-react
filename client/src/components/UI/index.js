@@ -1,9 +1,5 @@
-// import Button from "./Button/Button";
-// import Img from "./Img/Img";
-// import Icon from "./Icon/Icon";
+import Input from "./Input/Input";
 
 export { 
-	// Button,
-	// Img, 
-	// Icon 
+	Input,
 };

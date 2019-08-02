@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { register, clearErrors } from "../../redux/actions/index";
 import PropTypes from "prop-types";
+import { Input } from "../UI/index";
 import "./Modal.scss";
 
 const mapStateToProps = ({ error, auth: { isAuthenticated } }) => ({
@@ -68,32 +69,20 @@ class RegisterModal extends Component {
         <div className="modal-form">
           {msg ? <p>{msg}</p> : null}
           <form onSubmit={this.onSubmit}>
-            <label htmlFor="name">*Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Name"
-              autoComplete="true"
+            <Input
+              type={`name`}
               onChange={this.onChange}
+              autoComplete={`off`}
             />
-            <label htmlFor="email">*Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email"
-              autoComplete="user name"
+            <Input
+              type={`email`}
               onChange={this.onChange}
+              autoComplete={`on`}
             />
-            <label htmlFor="password">*Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Password"
-              autoComplete="current-password"
+            <Input
+              type={`password`}
               onChange={this.onChange}
+              autoComplete={`on`}
             />
             <div className="form-btns">
               <button>Submit</button>
