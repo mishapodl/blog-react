@@ -16,6 +16,13 @@ const mapStateToProps = ({ posts, isLoad: { isLoadPosts } }) => ({
 });
 
 class News extends Component {
+  componentDidMount() {
+    const { posts, loadPosts } = this.props;
+    !posts.length && loadPosts();
+  }
+  loadPosts = async () => {
+    await this.props.loadPosts();
+  };
   render() {
     const { posts, isLoadPosts, getIdPost } = this.props;
     return (
@@ -29,7 +36,10 @@ class News extends Component {
 
           <div className="container">
             {isLoadPosts ? (
-              <LatestPosts posts={posts} getIdPost={getIdPost} />
+              <div>
+                <LatestPosts posts={posts} getIdPost={getIdPost} />
+                <button onClick={this.loadPosts}>Load more...</button>
+              </div>
             ) : (
               <Spinner className={`latest-posts`} />
             )}
@@ -51,7 +61,8 @@ class News extends Component {
 News.propTypes = {
   posts: PropTypes.array.isRequired,
   isLoadPosts: PropTypes.bool.isRequired,
-  getIdPost: PropTypes.func
+  getIdPost: PropTypes.func,
+  loadPosts: PropTypes.func
 };
 
 export default connect(
