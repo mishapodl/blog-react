@@ -10,7 +10,7 @@ const Spinner = ({ className, header }) => {
         </header>
       )}
       <div className="spinner-circle">
-        <img src={"spinner.png"} alt="" width="100px" />
+        <img src={"../spinner.png"} alt="" width="100px" />
       </div>
     </div>
   );

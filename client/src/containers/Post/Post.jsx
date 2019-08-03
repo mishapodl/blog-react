@@ -4,20 +4,20 @@ import PropTypes from "prop-types";
 import {
   deleteComment,
   setComments,
-	getIdPost,
-	loadPosts
+  getIdPost,
+  loadPosts
 } from "../../redux/actions/index";
-import { Comments, Article } from "../../components/index";
+import { Comments, Article, Spinner } from "../../components/index";
 import "./Post.scss";
 
 class Post extends Component {
-	componentDidMount() {
+  componentDidMount() {
     const { posts, loadPosts } = this.props;
     !posts.length && loadPosts(1);
   }
   render() {
     const {
-			idPost,
+      idPost,
       posts,
       comments: { comments },
       auth,
@@ -28,27 +28,29 @@ class Post extends Component {
         params: { id_post }
       }
     } = this.props;
-		const currentPost = posts[+id_post];
-		!idPost && isLoadPosts && getIdPost(currentPost._id);
+    const currentPost = posts[+id_post];
+    !idPost && isLoadPosts && getIdPost(currentPost._id);
 
-		return (
+    return (
       <main>
         <section>
           <article className="post">
             {isLoadPosts ? (
               <>
                 <Article post={currentPost} />
-                {isLoadComments && (
+                {isLoadComments ? (
                   <Comments
                     comments={comments}
                     post={currentPost}
                     auth={auth}
                     deleteComment={deleteComment}
                   />
+                ) : (
+                  <Spinner className={`general`} />
                 )}
               </>
             ) : (
-              false
+              <Spinner className={`general`} />
             )}
           </article>
         </section>
@@ -64,7 +66,8 @@ Post.propTypes = {
   isLoad: PropTypes.object.isRequired,
   id_post: PropTypes.string.isRequired,
   deleteComment: PropTypes.func.isRequired,
-  getIdPost: PropTypes.func.isRequired
+  getIdPost: PropTypes.func.isRequired,
+  loadPosts: PropTypes.func.isRequired
 };
 
 Post.defaultProps = {
@@ -75,8 +78,8 @@ const mapStateToProps = ({ posts, comments, isLoad, auth, idPost }) => ({
   posts,
   comments,
   isLoad,
-	auth,
-	idPost
+  auth,
+  idPost
 });
 
 export default connect(

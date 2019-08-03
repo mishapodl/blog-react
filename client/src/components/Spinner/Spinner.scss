@@ -1,5 +1,11 @@
 .spinner {
-  text-align: center;
+	text-align: center;
+	&.general {
+    width: 100%;
+    .spinner-circle {
+      padding: 5rem 0;
+    }
+	}
   &.latest-posts {
     width: 80%;
     .spinner-circle {
