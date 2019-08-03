@@ -4,12 +4,17 @@ import PropTypes from "prop-types";
 import {
   deleteComment,
   setComments,
-  getIdPost
+	getIdPost,
+	loadPosts
 } from "../../redux/actions/index";
 import { Comments, Article } from "../../components/index";
 import "./Post.scss";
 
 class Post extends Component {
+	componentDidMount() {
+    const { posts, loadPosts } = this.props;
+    !posts.length && loadPosts(1);
+  }
   render() {
     const {
 			idPost,
@@ -76,5 +81,5 @@ const mapStateToProps = ({ posts, comments, isLoad, auth, idPost }) => ({
 
 export default connect(
   mapStateToProps,
-  { deleteComment, setComments, getIdPost }
+  { deleteComment, setComments, getIdPost, loadPosts }
 )(Post);

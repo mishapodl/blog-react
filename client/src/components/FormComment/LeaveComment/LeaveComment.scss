@@ -37,7 +37,7 @@ div.form-leave-comment {
     div {
       display: flex;
       align-items: center;
-      > input[type="submit"] {
+      > button[type="submit"] {
         display: inline-block;
         cursor: pointer;
         background: #ed786a;

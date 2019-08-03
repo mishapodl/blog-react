@@ -15,7 +15,7 @@ const LeaveComment = ({ onSubmit, onChange, isAuthenticated }) => (
       onChange={onChange}
     />
     <div>
-      <input type="submit" value="Submit" />
+      <button type="submit">Submit</button>
       <span className={!isAuthenticated && `active`}>PLEASE, LOGIN FOR LEAVE COMMENT!</span>
     </div>
   </form>
