@@ -7,7 +7,6 @@ const LatestPosts = ({ posts, getIdPost }) => {
   const handleGetComments = id => {
     getIdPost(id);
   };
-
   return (
     <div className="latest-posts-container">
       {posts.map(({ _id, img, desc, title }, index) => (
@@ -19,7 +18,7 @@ const LatestPosts = ({ posts, getIdPost }) => {
           <header>
             <h3>{title}</h3>
           </header>
-          <p>{`${desc} ${desc} ${desc} ${desc}`}</p>
+          <p>{desc.length > 70 ? `${desc}` : `${desc} ${desc} ${desc}`}</p>
           <Link to={`post/${index}`}>
             <button onClick={handleGetComments.bind(this, _id)}>
               Read more

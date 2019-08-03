@@ -6,7 +6,8 @@ import {
   AsideBarPosts,
   LatestPosts,
   PopularPosts,
-  Spinner
+  Spinner,
+  Pagination
 } from "../../components/index";
 import "./News.scss";
 
@@ -18,13 +19,10 @@ const mapStateToProps = ({ posts, isLoad: { isLoadPosts } }) => ({
 class News extends Component {
   componentDidMount() {
     const { posts, loadPosts } = this.props;
-    !posts.length && loadPosts();
+    !posts.length && loadPosts(1);
   }
-  loadPosts = async () => {
-    await this.props.loadPosts();
-  };
   render() {
-    const { posts, isLoadPosts, getIdPost } = this.props;
+    const { posts, isLoadPosts, getIdPost, loadPosts } = this.props;
     return (
       <main>
         <PopularPosts />
@@ -38,7 +36,7 @@ class News extends Component {
             {isLoadPosts ? (
               <div>
                 <LatestPosts posts={posts} getIdPost={getIdPost} />
-                <button onClick={this.loadPosts}>Load more...</button>
+                <Pagination loadPosts={loadPosts} />
               </div>
             ) : (
               <Spinner className={`latest-posts`} />

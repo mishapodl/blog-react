@@ -29,9 +29,9 @@ const tokenConfig = token => {
   return config;
 };
 
-export function* workGetPosts() {
+export function* workGetPosts(page) {
   try {
-    const posts = yield call(fetchGetPosts);
+    const posts = yield call(fetchGetPosts, page.page);
     yield put(setPosts(posts));
   } catch (err) {
     yield put(setErrorPosts(err));

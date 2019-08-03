@@ -3,8 +3,8 @@ import axios from "axios";
 const fetchError = ({ status, data, error }) =>
   status >= 400 ? new Error(error) : data;
 
-export const fetchGetPosts = async () => {
-  let posts = await axios.get(`/api/posts`);
+export const fetchGetPosts = async page => {
+  let posts = await axios.get(`/api/posts?page=${page}`);
   return fetchError(posts);
 };
 

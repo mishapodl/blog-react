@@ -1,8 +1,9 @@
 import { POSTS, COMMENTS } from "../constants";
 
 // GET POSTS
-export const loadPosts = () => ({
-  type: POSTS.LOADING
+export const loadPosts = page => ({
+	type: POSTS.LOADING,
+	page
 });
 
 export const setPosts = payload => ({

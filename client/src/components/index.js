@@ -11,6 +11,7 @@ import Spinner from "./Spinner/Spinner";
 import Login from "./auth/LoginModal";
 import RegisterModal from "./auth/RegisterModal";
 import Logout from "./auth/Logout";
+import Pagination from "./Pagination/Pagination";
 
 export {
   Article,
@@ -25,5 +26,6 @@ export {
   RegisterModal,
   Logout,
   Login,
-  Spinner
+	Spinner,
+	Pagination
 };

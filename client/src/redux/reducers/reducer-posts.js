@@ -3,7 +3,8 @@ import { POSTS, COMMENTS } from "../constants";
 export function reducerPosts(state = [], action) {
   switch (action.type) {
     case POSTS.LOAD_SUCCESS:
-      return [...state, ...action.payload];
+      return [...action.payload];
+      // return [...state, ...action.payload];
     default:
       return state;
   }
