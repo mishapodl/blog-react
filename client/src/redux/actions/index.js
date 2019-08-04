@@ -4,7 +4,8 @@ import {
   sendComment,
   sendCommentSuccess,
   deleteComment,
-  setComments
+	setComments,
+	loadPopularPosts
 } from "./actions-posts";
 import { loadUser, register, logout, login } from "./actions-auth";
 import { clearErrors } from "./actions-errors";
@@ -20,5 +21,6 @@ export {
   logout,
 	login,
   clearErrors,
-  setComments
+	setComments,
+	loadPopularPosts
 };

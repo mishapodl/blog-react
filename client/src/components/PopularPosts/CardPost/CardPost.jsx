@@ -1,28 +1,28 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+
 import "./CardPost.scss";
 
-const CardPost = ({ posts }) =>
-  [1, 2, 3].map((post, i) => (
-    <article key={i}>
+const CardPost = ({ posts, getIdPost }) =>
+  posts.map(({ _id, img, desc, title }, i) => (
+    <article key={i} onClick={() => {}}>
       <figure>
-        <img src={`img${post}.jpg`} alt="img" />
+        <img src={img ? img : `noimage.jpg`} alt="img" />
       </figure>
       <div>
         <header>
-          <h3>Lorem ipsum dolor sit.</h3>
+          <h3>{title}</h3>
         </header>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi maxime
-          debitis praesentium nihil quam pariatur enim harum sunt quibusdam
-          facere.
-        </p>
+        <Link to={`post/${i}`} onClick={getIdPost.bind(this, _id)}>
+          <p>{desc.length > 70 ? `${desc}` : `${desc} ${desc} ${desc}`}</p>
+        </Link>
       </div>
     </article>
   ));
 
 CardPost.propTypes = {
-	posts: PropTypes.array
+  posts: PropTypes.array
 };
 
 export default CardPost;

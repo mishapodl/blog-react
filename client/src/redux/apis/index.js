@@ -8,6 +8,11 @@ export const fetchGetPosts = async page => {
   return fetchError(posts);
 };
 
+export const fetchGetPopularPosts = async (from, to) => {
+  let posts = await axios.get(`/api/posts/sort?date1=${from}&date2=${to}`);
+  return fetchError(posts);
+};
+
 export const fetchGetComments = async idPost => {
   let comments = await axios.get(`/api/comments/${idPost}`);
   return fetchError(comments);

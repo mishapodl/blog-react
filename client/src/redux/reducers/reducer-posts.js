@@ -10,6 +10,16 @@ export function reducerPosts(state = [], action) {
   }
 }
 
+export function reducerPopularPosts(state = [], action) {
+  switch (action.type) {
+    case POSTS.LOAD_POPULAR_SUCCESS:
+			return [...action.payload];
+			// return [...state, ...action.payload];
+    default:
+      return state;
+  }
+}
+
 export function reducerIdPostForComments(state = null, action) {
   switch (action.type) {
     case COMMENTS.ID_POST:

@@ -3,14 +3,18 @@ import PropTypes from "prop-types";
 import CardPost from "./CardPost/CardPost";
 import "./PopularPosts.scss";
 
-const PopularPosts = ({ posts }) => {
+const PopularPosts = ({ posts, getIdPost }) => {
+	const handleGetComments = id => {
+		console.log(id)
+    getIdPost(id);
+  };
   return (
     <section className="popular-posts">
       <header>
         <h2>Popular posts</h2>
       </header>
       <div>
-        <CardPost />
+        <CardPost posts={posts} getIdPost={handleGetComments}/>
       </div>
     </section>
   );

@@ -10,7 +10,8 @@ import {
   workGetPosts,
   workGetComments,
   workPostComment,
-  workDeleteComment
+	workDeleteComment,
+	workGetPopularPosts
 } from "./saga-posts";
 import { 
 	workLoadUser, 
@@ -20,6 +21,7 @@ import {
 
 export default function* watchSaga() {
   yield takeEvery(POSTS.LOADING, workGetPosts);
+  yield takeEvery(POSTS.LOADING_POPULAR, workGetPopularPosts);
   yield takeEvery(COMMENTS.ID_POST, workGetComments);
   yield takeEvery(COMMENTS.SEND, workPostComment);
   yield takeEvery(COMMENTS.DELETE_COMMENT, workDeleteComment);

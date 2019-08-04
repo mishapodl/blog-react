@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { loadPosts, getIdPost } from "../../redux/actions/index";
+import {
+  loadPosts,
+  getIdPost,
+  loadPopularPosts
+} from "../../redux/actions/index";
 import {
   AsideBarPosts,
   LatestPosts,
@@ -11,22 +15,40 @@ import {
 } from "../../components/index";
 import "./News.scss";
 
-const mapStateToProps = ({ posts, isLoad: { isLoadPosts } }) => ({
+const mapStateToProps = ({
   posts,
-  isLoadPosts
+  popularPosts,
+  isLoad: { isLoadPosts, isLoadPopularPosts }
+}) => ({
+  posts,
+  popularPosts,
+  isLoadPosts,
+  isLoadPopularPosts
 });
 
 class News extends Component {
   componentDidMount() {
-    const { posts, loadPosts } = this.props;
+    const { posts, loadPosts, loadPopularPosts, popularPosts } = this.props;
     !posts.length && loadPosts(1);
+    !popularPosts.length && loadPopularPosts("2019-07-01", "2019-08-01");
   }
+
   render() {
-    const { posts, isLoadPosts, getIdPost, loadPosts } = this.props;
+    const {
+      posts,
+      isLoadPosts,
+      getIdPost,
+      loadPosts,
+      popularPosts,
+      isLoadPopularPosts
+    } = this.props;
     return (
       <main>
-        <PopularPosts />
-
+        {isLoadPopularPosts ? (
+          <PopularPosts posts={popularPosts} getIdPost={getIdPost} />
+        ) : (
+          <Spinner className={`general`} header={`Popular last month`} />
+        )}
         <section className="latest-posts">
           <header>
             <h2>Latest posts</h2>
@@ -41,8 +63,8 @@ class News extends Component {
             ) : (
               <Spinner className={`latest-posts`} />
             )}
-            {isLoadPosts ? (
-              <AsideBarPosts posts={posts} />
+            {isLoadPopularPosts ? (
+              <AsideBarPosts posts={popularPosts} getIdPost={getIdPost} />
             ) : (
               <Spinner
                 className={`aside-posts`}
@@ -65,5 +87,5 @@ News.propTypes = {
 
 export default connect(
   mapStateToProps,
-  { loadPosts, getIdPost }
+  { loadPosts, getIdPost, loadPopularPosts }
 )(News);
