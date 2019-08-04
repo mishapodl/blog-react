@@ -10,7 +10,7 @@ const PopularPosts = ({ posts }) => {
         <h2>Popular posts</h2>
       </header>
       <div>
-        <CardPost />
+        <CardPost posts={posts}/>
       </div>
     </section>
   );

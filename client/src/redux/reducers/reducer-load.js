@@ -14,6 +14,17 @@ const reducerLoadPosts = (state = false, action) => {
   }
 };
 
+const reducerLoadPopularPosts = (state = false, action) => {
+  switch (action.type) {
+    case POSTS.LOADING_POPULAR:
+      return false;
+    case POSTS.LOAD_POPULAR_SUCCESS:
+      return true;
+    default:
+      return state;
+  }
+};
+
 const reducerLoadComments = (state = false, action) => {
   switch (action.type) {
     case COMMENTS.LOADING:
@@ -42,7 +53,8 @@ const reducerSendComment = (state = false, action) => {
 const reducersLoad = combineReducers({
   isLoadPosts: reducerLoadPosts,
   isLoadComments: reducerLoadComments,
-  isSendComment: reducerSendComment
+	isSendComment: reducerSendComment,
+	isLoadPopularPosts: reducerLoadPopularPosts
 });
 
 export default reducersLoad;

@@ -1,5 +1,10 @@
 // @import "../../App.scss";
 
+$break-x-large: 1920px;
+$break-m-large: 1620px;
+$break-large: 1440px;
+$break-medium: 1024px;
+
 @mixin flex-between {
   display: flex;
   align-items: center;
@@ -13,12 +18,29 @@ div#root > header {
   background-image: url("/banner.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  // background-size: auto 100%;
-  background-size: cover;
-  transition: 1s;
+  background-size: auto 150%;
+	transition: 1s;
+	@media (max-width: $break-m-large) {
+		background-size: auto 125%;
+	}
+	@media (max-width: $break-large) {
+		background-size: auto 110%;
+	}
+	@media (max-width: $break-medium) {
+		background-size: auto 100%;
+	}
   &:hover {
-    // background-size: auto 110%;
-  }
+		background-size: auto 160%;
+		@media (max-width: $break-m-large) {
+			background-size: auto 135%;
+		}
+		@media (max-width: $break-large) {
+			background-size: auto 120%;
+		}
+		@media (max-width: $break-medium) {
+			background-size: auto 110%;
+		}
+	}
   > h1 {
     text-align: center;
     font-size: 2rem;

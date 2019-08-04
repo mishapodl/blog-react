@@ -8,6 +8,8 @@
 
 section.latest-posts {
   > div.container {
+		> div {
+			width: 75%;
       div.latest-posts-container {
 			display: flex;
 			overflow: hidden;
@@ -94,4 +96,5 @@ section.latest-posts {
       }
     }
   }
+}
 }

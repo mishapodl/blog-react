@@ -2,12 +2,23 @@ import { POSTS, COMMENTS } from "../constants";
 
 // GET POSTS
 export const loadPosts = page => ({
-	type: POSTS.LOADING,
-	page
+  type: POSTS.LOADING,
+  page
 });
 
 export const setPosts = payload => ({
   type: POSTS.LOAD_SUCCESS,
+  payload
+});
+
+export const loadPopularPosts = (from, to) => ({
+  type: POSTS.LOADING_POPULAR,
+  from,
+  to
+});
+
+export const setPopularPosts = payload => ({
+  type: POSTS.LOAD_POPULAR_SUCCESS,
   payload
 });
 

@@ -3,7 +3,8 @@ import {
   fetchGetPosts,
   fetchGetComments,
   fetchSendComment,
-  fetchDeleteComment
+  fetchDeleteComment,
+  fetchGetPopularPosts
 } from "../apis/index";
 import {
   setErrorPosts,
@@ -11,7 +12,8 @@ import {
   setErrorComments,
   sendCommentSuccess,
   setComments,
-  deleteSuccess
+  deleteSuccess,
+  setPopularPosts
 } from "../actions/actions-posts";
 
 const getIdPost = state => state.idPost;
@@ -38,6 +40,15 @@ export function* workGetPosts(page) {
   }
 }
 
+export function* workGetPopularPosts({ from, to }) {
+  try {
+    const posts = yield call(fetchGetPopularPosts, from, to);
+    yield put(setPopularPosts(posts));
+  } catch (err) {
+    yield put(setErrorPosts(err));
+  }
+}
+
 export function* workGetComments() {
   try {
     const idPost = yield select(getIdPost);
@@ -55,7 +66,7 @@ export function* workPostComment(comment) {
 
     yield call(fetchSendComment, comment, tokenConfig(token));
     yield put(sendCommentSuccess());
-    
+
     const comments = yield call(fetchGetComments, idPost);
     yield put(setComments(comments));
   } catch (err) {
