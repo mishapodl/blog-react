@@ -9,6 +9,7 @@ import {
   Logout,
   Login
 } from "../../components/index";
+import { menuListHeader } from "../../data";
 import "./Header.scss";
 
 class Header extends Component {
@@ -16,22 +17,39 @@ class Header extends Component {
     isAuthenticated: PropTypes.bool.isRequired
   };
 
+  state = {
+    mobile: null
+  };
+
+  isToggle = () => {
+    this.setState({
+      mobile: !this.state.mobile
+    });
+  };
+
   render() {
     const { isAuthenticated } = this.props;
+    const { mobile } = this.state;
     return (
       <header>
         <div>
           <Logo />
-          <Navigation />
-          <div className="auth-panel">
-            {!isAuthenticated ? (
-              <>
-                <RegisterModal />
-                <Login />
-              </>
-            ) : (
-              <Logout />
-            )}
+          <div className="menu-panel">
+            <Navigation
+              toggle={this.isToggle}
+              mobile={mobile}
+              menu={menuListHeader}
+            />
+            <div className="auth-panel">
+              {!isAuthenticated ? (
+                <>
+                  <RegisterModal />
+                  <Login />
+                </>
+              ) : (
+                <Logout />
+              )}
+            </div>
           </div>
         </div>
         <h1>Top blog in the world!</h1>

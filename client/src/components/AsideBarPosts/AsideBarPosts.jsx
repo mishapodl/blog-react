@@ -14,15 +14,15 @@ const AsideBarPosts = ({ posts, getIdPost }) => {
         <h4>Popular last month</h4>
       </header>
       <div className="posts">
-        {posts.map(({ _id, title, desc, likes }, index) =>
+        {posts.map(({ _id, title, desc, likes }, i) =>
           likes > 25 ? (
-            <article key={index}>
+            <article key={i}>
               <>
                 <header>
                   <h4>{title}</h4>
                 </header>
-                <p>{`${desc} ${desc}`}</p>
-                <Link to={`post/${index}`}>
+                <p>{desc}</p>
+                <Link to={`post/${i}`}>
                   <button onClick={handleGetComments.bind(this, _id)}>
                     Read more
                   </button>

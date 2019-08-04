@@ -8,7 +8,7 @@ const Pagination = ({ loadPosts }) => {
 
   return (
     <div className="pagination">
-      {[1, 2, 3].map(i => (
+      {[1, 2].map(i => (
         <button onClick={loadPostsPagination.bind(null, i)} key={i}>
           {i}
         </button>

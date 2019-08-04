@@ -2,10 +2,15 @@ section.popular-posts {
 	article {
     width: 33.3%;
     overflow: hidden;
-    margin: 1rem 1.5rem;
+    margin: 1rem 0.5rem;
     box-shadow: 0 0 20px 0px #0000003d;
     transition: 0.3s;
-		height: 450px;
+		height: 460px;
+		@media (max-width: 1024px) {
+			height: 440px;
+			width: 48%;
+			margin: 1rem;
+		}
     > figure {
 			margin-bottom: 1.5rem;
 			height: 255px;
@@ -19,7 +24,29 @@ section.popular-posts {
     }
     &:nth-child(1) {
       margin-left: 0;
-    }
+		}
+		@media (max-width: 1024px) {
+			&:nth-child(2) {
+				margin-right: 0;
+			}
+			&:nth-child(3) {
+				display: none;
+			}
+		}
+		@media (max-width: 768px) {
+			&:nth-child(2) {
+				display: none;
+			}
+			&:nth-child(1) {
+				width: 70%;
+				margin: 0 auto;
+			}
+		}
+		@media (max-width: 500px) {
+			&:nth-child(1) {
+				width: 90%;
+			}
+		}
     &:nth-child(3) {
       margin-right: 0;
     }

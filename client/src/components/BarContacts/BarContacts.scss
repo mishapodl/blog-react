@@ -5,7 +5,7 @@ $border-color-nav: #fff;
 $border-color-nav-hoevr: #000;
 
 $background-color-nav: #fff;
-$background-color-icons: #000;
+$background-color-icons: #0000005c;
 
 $text-color-main-H2: #777;
 $border-color-main-H2: #000;
@@ -37,7 +37,8 @@ $border-color-main-H2: #000;
         background-color: $background-color-icons;
         border-radius: 100%;
         font-size: 1.5rem;
-        padding: 1.5rem;
+				padding: 1.5rem;
+				border: 1px solid;
       }
     }
   }
@@ -47,14 +48,27 @@ div#root > header {
   > section.contact-information {
     overflow: hidden;
     position: absolute;
-    right: 10px;
-    top: 30px;
+    right: 20px;
+    top: 50%;
+		transform: translate(0px, -50%);
+		transition: .3s;
+		&:hover {
+			right: 20px;
+		}
+		@media (max-width: 1024px) {
+			transform: translate(0px, -40%);
+		}
     > ul {
       display: flex;
       flex-direction: column;
       @include info;
       > li > a {
-        margin: 5px 0;
+				margin: 5px 0;
+				> i.icon {
+					@media (max-width: 768px) {
+						display: none;
+					}
+				}
       }
     }
   }

@@ -1,35 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import MenuList from "./MenuList/MenuList";
 import "./Navigation.scss";
 
-const Navigation = ({ showListItem }) => {
+const Navigation = ({ mobile, toggle, menu }) => {
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/">Post</Link>
-          </li>
-          {showListItem && (
-            <li>
-              <Link to="/">Contacts</Link>
-            </li>
-          )}
-          <li>
-            <Link to="/">About us</Link>
-          </li>
-        </ul>
+      <nav className={`mobile ${mobile}`}>
+        <span onClick={toggle} className="close">
+          <i className="fas fa-times" />
+        </span>
+				<MenuList menu={menu}/>
       </nav>
+      <div className={`menu-burger`} onClick={toggle}>
+        <i className="fas fa-bars" />
+      </div>
     </>
   );
 };
 
 Navigation.propTypes = {
-	showListItem: PropTypes.bool.isRequired
+  showListItem: PropTypes.bool.isRequired
 };
 
 Navigation.defaultProps = {

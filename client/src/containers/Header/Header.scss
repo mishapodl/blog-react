@@ -4,6 +4,8 @@ $break-x-large: 1920px;
 $break-m-large: 1620px;
 $break-large: 1440px;
 $break-medium: 1024px;
+$break-small: 768px;
+$break-x-small: 500px;
 
 @mixin flex-between {
   display: flex;
@@ -20,6 +22,8 @@ div#root > header {
   background-repeat: no-repeat;
   background-size: auto 150%;
 	transition: 1s;
+	max-height: 500px;
+	min-height: 460px;
 	@media (max-width: $break-m-large) {
 		background-size: auto 125%;
 	}
@@ -29,6 +33,10 @@ div#root > header {
 	@media (max-width: $break-medium) {
 		background-size: auto 100%;
 	}
+	@media (max-width: $break-small) {
+		height: 35vh;
+		min-height: unset;
+	}
   &:hover {
 		background-size: auto 160%;
 		@media (max-width: $break-m-large) {
@@ -36,6 +44,9 @@ div#root > header {
 		}
 		@media (max-width: $break-large) {
 			background-size: auto 120%;
+		}
+		@media (max-width: $break-medium) {
+			background-size: auto 110%;
 		}
 		@media (max-width: $break-medium) {
 			background-size: auto 110%;
@@ -50,12 +61,16 @@ div#root > header {
     color: #fff;
     letter-spacing: 0.15rem;
     padding: 0.5rem 1rem;
-    margin-bottom: 5rem;
+		margin-bottom: 5rem;
+		@media (max-width: $break-x-small) {
+			font-size: 1.5rem;
+		}
   }
   > div {
     @include flex-between;
-    width: 80%;
-    max-width: 1366px;
-    margin: 0 auto;
+		width: 90%;
+    max-width: 1280px;
+		margin: 2rem auto;
+		
   }
 }

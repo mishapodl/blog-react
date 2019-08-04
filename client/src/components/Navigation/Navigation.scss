@@ -56,20 +56,95 @@ div#root > header {
     @include flex-between;
     width: 80%;
     max-width: 1366px;
-    margin: 0 auto;
-    > nav {
-      display: flex;
-      width: 80%;
-      max-width: 700px;
-      height: 60px;
-      margin: 2rem;
-      border: 1px solid $border-color-nav;
-      border-radius: 10px;
-      padding: 1rem 0;
-      overflow: hidden;
-      @include nav-bar;
-    }
-  }
+		margin: 0 auto;
+		> div.menu-panel {
+			display: flex;
+			align-items: center;
+			flex-basis: 83%;
+			justify-content: space-between;
+			transition: .3s;
+			@media (max-width: 1024px) {
+				flex-direction: row-reverse;
+				flex-basis: unset;
+				nav > {
+					width: 60px;
+				}
+			}
+			> nav {
+				display: flex;
+				width: 80%;
+				max-width: 700px;
+				height: 60px;
+				border: 1px solid $border-color-nav;
+				border-radius: 10px;
+				padding: 1rem 0;
+				overflow: hidden;
+				margin: 0 2rem 0 0;
+				@include nav-bar;
+				@media (max-width: 1024px) {
+					position: absolute;
+					top: 0;
+					right: 0;
+					border-radius: 0;
+					height: 100vh;
+					border: 0;
+					background: rgba(0, 0, 0, 0.86);
+					z-index: 1;
+					padding: 0;
+					margin: 0;
+					width: 0;
+					transition: .3s;
+					flex-direction: column;
+					> ul {
+						flex-direction: column;
+						height: 40%;
+						> li {
+							height: 100% !important;
+						}
+					}
+					&.false {
+						width: 0;
+					}
+					&.true {
+						width: 50%;
+						display: block;
+					}
+				}
+				> span.close {
+					display: none;
+					color: #a03232;
+					padding-top: 1rem;
+					cursor: pointer;
+					@media (max-width: 1024px) {
+						display: block;
+						text-align: center;
+						font-size: 2rem;
+						width: 40px;
+						margin: 17px auto;
+						border-radius: 100%;
+					}
+
+				}
+			}
+			>.menu-burger {
+				width: 0;
+				height: 40px;
+				overflow: hidden;
+				transition: 0s;
+				margin: 0 0 0 1.5rem;
+				font-size: 1.8rem;
+				color: rgb(255, 255, 255);
+				padding: 4px;
+				cursor: pointer;
+				display: none;
+				@media (max-width: 1024px) {
+					width: 40px;
+					transition: .3s;
+					display: block;
+				}
+			}
+		}
+	}
 }
 
 div#root > footer {
@@ -89,6 +164,22 @@ div#root > footer {
 			padding: 0.8rem 0;
 			overflow: hidden;
 			@include nav-bar;
+			@media (max-width: 1024px) {
+				display: none;
+			}
 		}
+		@media (max-width: 1024px) {
+			> section.contact-information {
+				margin: 0 auto;
+			}	
+		}
+	}
+	@media (max-width: 1024px) {
+		.menu-burger {
+			display: none;
+		}
+	}
+	span, .menu-burger {
+		display: none;
 	}
 }

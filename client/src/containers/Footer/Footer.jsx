@@ -1,12 +1,14 @@
 import React from "react";
 import { Navigation, BarContacts } from "../../components/index";
+import { menuListFooter } from "../../data";
+
 import "./Footer.scss";
 
 const Footer = () => {
   return (
     <footer>
       <div className="container">
-        <Navigation showListItem={false} />
+        <Navigation menu={menuListFooter} />
         <BarContacts showHaderSection={true} />
       </div>
       <div className="footer-copy">

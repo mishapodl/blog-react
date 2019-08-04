@@ -3,6 +3,10 @@
 	justify-content: space-around;
 }
 
+.auth-panel button:hover {
+	color: #000;
+	background-color: rgb(255, 255, 255);
+}
 .auth-panel button {
 	background-color: rgba(0, 0, 0, 0);
 	text-transform: uppercase;
@@ -12,6 +16,9 @@
 	padding: 0.5em 1em;
 	border: 1px solid;
 	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	transition: 0.3s;
 }
 
 .regisetr-modal .bg-overlay {

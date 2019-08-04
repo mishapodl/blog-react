@@ -10,12 +10,20 @@ section.latest-posts {
   > div.container {
 		> div {
 			width: 75%;
+			@media(max-width: 768px) {
+				width: 100%;
+			}
       div.latest-posts-container {
 			display: flex;
 			overflow: hidden;
 			flex-wrap: wrap;
 			flex: 3;
 			justify-content: space-between;
+			@media(max-width: 768px) {
+				width: 80%;
+				margin: 0 auto;
+				min-width: 350px;
+			}
       > article {
         overflow: hidden;
 				min-height: 350px;
@@ -92,7 +100,13 @@ section.latest-posts {
           &:hover {
             background-color: #000000c0;
           }
-        }
+				}
+				@media (max-width: 1024px) {
+					min-width: unset;
+					max-width: unset;
+					width: unset;
+					flex: unset;
+				}
       }
     }
   }
