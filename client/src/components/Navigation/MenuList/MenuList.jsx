@@ -5,7 +5,7 @@ import "./MenuList.scss";
 const MenuList = ({ menu }) => (
   <ul>
     {menu.map(({ name, link }) => {
-      return <li>{<Link to={link}>{name}</Link>}</li>;
+      return <li key={name}>{<Link to={link}>{name}</Link>}</li>;
     })}
   </ul>
 );

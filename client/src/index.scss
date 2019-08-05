@@ -1,6 +1,134 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:light,regular,bold,italic&subset=latin,latin-ext');
-@import url("./App.scss");
+
+$text-color-nav: #fff;
+$text-color-nav-hoevr: #000;
+$border-color-nav: #fff;
+$border-color-nav-hoevr: #000;
+$background-color-nav: #fff;
+
+$background-color-icons: #0000005c;
+
+$text-color-main-H2: #777;
+$border-color-main-H2: #000;
+
+$break-x-large: 1920px;
+$break-m-large: 1620px;
+$break-large: 1440px;
+$break-medium: 1024px;
+$break-small: 768px;
+
+@mixin border-header {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #fff;
+}
+@mixin flex-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin h2-on-page {
+  text-align: center;
+  margin: 1.5rem 0 1.5rem 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  border: 1px solid $border-color-main-H2;
+  color: $text-color-main-H2;
+  padding: 0.25rem 1rem 0.25rem 1.2rem;
+}
+@mixin info {
+  > li {
+    display: flex;
+    align-items: center;
+    > a {
+      text-decoration: none;
+      letter-spacing: 0.1rem;
+      font-weight: 400;
+      padding: 0 0.2rem;
+      color: #fff;
+      font-size: 1rem;
+      > i.icon {
+        display: flex;
+        width: 1rem;
+        height: 1rem;
+        margin: 5px;
+        align-items: center;
+        justify-content: center;
+        background-color: $background-color-icons;
+        border-radius: 100%;
+        font-size: 1.5rem;
+        padding: 1.5rem;
+      }
+    }
+  }
+}
+@mixin nav-bar {
+  > ul {
+    @include flex-around;
+    width: 100%;
+    list-style: none;
+    > li {
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      transition: 0.3s;
+      height: 100%;
+      width: 100%;
+      > a {
+        color: $text-color-nav;
+        text-decoration: none;
+        letter-spacing: 0.2rem;
+        font-weight: 100;
+        padding: 0 10px;
+        font-size: 1rem;
+        width: 100%;
+        text-align: center;
+      }
+      &:hover {
+        height: 60px;
+        background-color: $background-color-nav;
+        a {
+          color: $text-color-nav-hoevr;
+        }
+      }
+    }
+  }
+}
+@mixin info {
+  > li {
+    display: flex;
+    align-items: center;
+    > a {
+      text-decoration: none;
+      letter-spacing: 0.1rem;
+      font-weight: 400;
+      padding: 0 0.2rem;
+      color: #fff;
+      font-size: 1rem;
+      > i.icon {
+        display: flex;
+        width: 1rem;
+        height: 1rem;
+        margin: 5px;
+        align-items: center;
+        justify-content: center;
+        background-color: $background-color-icons;
+        border-radius: 100%;
+        font-size: 1.5rem;
+        padding: 1.5rem;
+        border: 1px solid;
+      }
+    }
+  }
+}
 
 * {
   padding: 0;

@@ -1,40 +1,56 @@
 export const menuListHeader = [
   {
     name: "Home",
-    click: true,
     link: "/"
   },
   {
     name: "Posts",
-    click: true,
-    link: "/"
+    link: "/post"
   },
   {
     name: "Contacts",
-    click: true,
-    link: "/"
+    link: "/contacts"
   },
   {
     name: "About Us",
-    click: true,
-    link: "/"
+    link: "/about"
   }
 ];
 
 export const menuListFooter = [
   {
     name: "Home",
-    click: false,
     link: "/"
   },
   {
     name: "Posts",
-    click: false,
-    link: "/"
+    link: "/post"
   },
   {
     name: "About Us",
-    click: false,
-    link: "/"
+    link: "/about"
+  }
+];
+
+export const contacts = [
+  {
+    name: "mail",
+    href: "mailto: mishapod@gmail.com",
+    icon: "icon far fa-envelope"
+  },
+  {
+    name: "github",
+    href: "https://github.com/mishapodl",
+    icon: "icon fab fa-github"
+  },
+  {
+    name: "stackoverflow",
+    href: "https://ru.stackoverflow.com/users/252282/michael-podlevskykh",
+    icon: "icon fab fa-stack-overflow"
+  },
+  {
+    name: "linkedin",
+    href: "https://www.linkedin.com/in/michael-podlevskykh-574b98119/",
+    icon: "icon fab fa-linkedin"
   }
 ];
