@@ -10,6 +10,9 @@ $background-color-icons: #0000005c;
 $text-color-main-H2: #777;
 $border-color-main-H2: #000;
 
+$break-medium: 1024px;
+$break-small: 768px;
+
 @mixin border-header {
   display: inline-block;
   padding: 0.2rem 0.5rem;
@@ -21,24 +24,24 @@ $border-color-main-H2: #000;
     display: flex;
     align-items: center;
     > a {
-      text-decoration: none;
-      letter-spacing: 0.1rem;
-      font-weight: 400;
       padding: 0 0.2rem;
       color: #fff;
+      font-weight: 400;
       font-size: 1rem;
+      letter-spacing: 0.1rem;
+      text-decoration: none;
       > i.icon {
         display: flex;
+        justify-content: center;
+        align-items: center;
         width: 1rem;
         height: 1rem;
         margin: 5px;
-        align-items: center;
-        justify-content: center;
+				padding: 1.5rem;
+				border: 1px solid;
         background-color: $background-color-icons;
         border-radius: 100%;
         font-size: 1.5rem;
-				padding: 1.5rem;
-				border: 1px solid;
       }
     }
   }
@@ -55,7 +58,7 @@ div#root > header {
 		&:hover {
 			right: 20px;
 		}
-		@media (max-width: 1024px) {
+		@media (max-width: $break-medium) {
 			transform: translate(0px, -40%);
 		}
     > ul {
@@ -65,7 +68,7 @@ div#root > header {
       > li > a {
 				margin: 5px 0;
 				> i.icon {
-					@media (max-width: 768px) {
+					@media (max-width: $break-small) {
 						display: none;
 					}
 				}

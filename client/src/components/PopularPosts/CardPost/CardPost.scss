@@ -1,82 +1,82 @@
 section.popular-posts {
-	article {
+  article {
     width: 33.3%;
-    overflow: hidden;
+    height: 460px;
     margin: 1rem 0.5rem;
+    overflow: hidden;
     box-shadow: 0 0 20px 0px #0000003d;
     transition: 0.3s;
-		height: 460px;
-		@media (max-width: 1024px) {
-			height: 440px;
-			width: 48%;
-			margin: 1rem;
-		}
+    @media (max-width: 1024px) {
+      height: 440px;
+      width: 48%;
+      margin: 1rem;
+    }
     > figure {
-			margin-bottom: 1.5rem;
-			height: 255px;
+      margin-bottom: 1.5rem;
+      height: 255px;
       img {
-				border: solid 5px #ebebeb;
-				height: 100%;
-				width: 100%;
-				object-fit: cover;
-				object-position: center;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        border: solid 5px #ebebeb;
       }
     }
     &:nth-child(1) {
       margin-left: 0;
-		}
-		@media (max-width: 1024px) {
-			&:nth-child(2) {
-				margin-right: 0;
-			}
-			&:nth-child(3) {
-				display: none;
-			}
-		}
-		@media (max-width: 768px) {
-			&:nth-child(2) {
-				display: none;
-			}
-			&:nth-child(1) {
-				width: 70%;
-				margin: 0 auto;
-			}
-		}
-		@media (max-width: 500px) {
-			&:nth-child(1) {
-				width: 90%;
-			}
-		}
+    }
+    @media (max-width: 1024px) {
+      &:nth-child(2) {
+        margin-right: 0;
+      }
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+    @media (max-width: 768px) {
+      &:nth-child(2) {
+        display: none;
+      }
+      &:nth-child(1) {
+        width: 70%;
+        margin: 0 auto;
+      }
+    }
+    @media (max-width: 500px) {
+      &:nth-child(1) {
+        width: 90%;
+      }
+    }
     &:nth-child(3) {
       margin-right: 0;
     }
     > div {
       h3 {
+        margin: 0 0 1.25rem 0;
+        color: #666;
         text-transform: uppercase;
         text-align: center;
         font-size: 1rem;
         letter-spacing: 2px;
-        margin: 0 0 1.25rem 0;
-        color: #666;
       }
       > a {
-				text-decoration: none;
-			 	> p {
-					color: #666;
-					line-height: 1.5;
-					text-align: center;
-					padding: 0 1rem 2rem;
-					font-weight: 100;
-					transition: .3s;
-					&:hover {
-						color: rgb(187, 133, 41);
-					}
-				}
-			}	
-		}
+        text-decoration: none;
+        > p {
+          padding: 0 1rem 2rem;
+          transition: 0.3s;
+          color: #666;
+          line-height: 1.5;
+          text-align: center;
+          font-weight: 100;
+          &:hover {
+            color: rgb(187, 133, 41);
+          }
+        }
+      }
+    }
     &:hover {
-      box-shadow: 1px 1px 20px 1px #0000003d;
       margin-top: -0.1rem;
+      box-shadow: 1px 1px 20px 1px #0000003d;
     }
   }
 }
