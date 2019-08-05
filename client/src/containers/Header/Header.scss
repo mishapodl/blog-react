@@ -14,16 +14,16 @@ $break-x-small: 500px;
 }
 
 div#root > header {
+	@include flex-between;
   flex-direction: column;
-  @include flex-between;
   height: 50vh;
+	max-height: 500px;
+	min-height: 460px;
   background-image: url("/banner.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto 150%;
 	transition: 1s;
-	max-height: 500px;
-	min-height: 460px;
 	@media (max-width: $break-m-large) {
 		background-size: auto 125%;
 	}
@@ -53,15 +53,15 @@ div#root > header {
 		}
 	}
   > h1 {
+    padding: 0.5rem 1rem;
+		margin-bottom: 5rem;
+    border: 1px solid #fff;
+    color: #fff;
     text-align: center;
     font-size: 2rem;
     text-transform: uppercase;
     font-weight: 100;
-    border: 1px solid #fff;
-    color: #fff;
     letter-spacing: 0.15rem;
-    padding: 0.5rem 1rem;
-		margin-bottom: 5rem;
 		@media (max-width: $break-x-small) {
 			font-size: 1.5rem;
 		}

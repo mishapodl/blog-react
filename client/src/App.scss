@@ -6,11 +6,16 @@ $border-color-nav: #fff;
 $border-color-nav-hoevr: #000;
 $background-color-nav: #fff;
 
-$background-color-icons: #000;
+$background-color-icons: #0000005c;
 
 $text-color-main-H2: #777;
 $border-color-main-H2: #000;
 
+$break-x-large: 1920px;
+$break-m-large: 1620px;
+$break-large: 1440px;
+$break-medium: 1024px;
+$break-small: 768px;
 
 @mixin border-header {
   display: inline-block;
@@ -96,6 +101,33 @@ $border-color-main-H2: #000;
     }
   }
 }
+@mixin info {
+  > li {
+    display: flex;
+    align-items: center;
+    > a {
+      text-decoration: none;
+      letter-spacing: 0.1rem;
+      font-weight: 400;
+      padding: 0 0.2rem;
+      color: #fff;
+      font-size: 1rem;
+      > i.icon {
+        display: flex;
+        width: 1rem;
+        height: 1rem;
+        margin: 5px;
+        align-items: center;
+        justify-content: center;
+        background-color: $background-color-icons;
+        border-radius: 100%;
+        font-size: 1.5rem;
+				padding: 1.5rem;
+				border: 1px solid;
+      }
+    }
+  }
+}
 
 div#root  {
 	display: flex;
@@ -115,9 +147,7 @@ div#root  {
 }
 
 main {
-	// max-width: 1024px;
 	max-width: 1366px;
-  // min-width: 768px;
   margin: 0 auto;
   color: #777777;
   font-family: 'Source Sans Pro';

@@ -1,11 +1,11 @@
 .spinner {
-	text-align: center;
-	&.general {
+  text-align: center;
+  &.general {
     width: 100%;
     .spinner-circle {
       padding: 5rem 0;
     }
-	}
+  }
   &.latest-posts {
     width: 80%;
     .spinner-circle {
@@ -15,21 +15,19 @@
   &.aside-posts {
     width: 20%;
     margin-left: 1rem;
-		min-width: 250px;
-		max-width: 300px;
+    min-width: 250px;
+    max-width: 300px;
     > header h4 {
-      text-align: center;
-      margin: 1.5rem 0 1.5rem 0;
-      font-size: 2rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2rem;
-      font-weight: 400;
-      border: 1px solid #000;
-      color: #777;
-      padding: 0.25rem 1rem 0.25rem 1.2rem;
       padding: 0.25rem 0.5rem 0.25rem 0.7rem;
-      font-size: 1rem;
       margin: 0 0 1rem 0;
+      border: 1px solid #000;
+      margin: 1.5rem 0 1.5rem 0;
+      font-weight: 400;
+      font-size: 1rem;
+      color: #777;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 0.2rem;
     }
     .spinner-circle {
       padding-top: 2rem;
