@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { Header, Footer } from "./containers/index";
 import { NotFound, Post, Home, Contacts, AboutUs } from "./pages/index";
-import ScrollTo from "./hoc/scrollTo";
+import Scroll from "./hoc/scroll";
 import "./App.scss";
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <>
         <Header />
-        <ScrollTo>
+        <Scroll>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/post/:id_post" component={Post} />
@@ -19,7 +19,7 @@ class App extends Component {
             <Route path="/contacts" component={Contacts} />
             <Route path="*" component={NotFound} />
           </Switch>
-        </ScrollTo>
+        </Scroll>
         <Footer />
       </>
     );

@@ -14,23 +14,19 @@ const AsideBarPosts = ({ posts, getIdPost }) => {
         <h4>Popular last month</h4>
       </header>
       <div className="posts">
-        {posts.map(({ _id, title, desc, likes }, i) =>
-          likes > 25 ? (
-            <article key={i}>
-              <>
-                <header>
-                  <h4>{title}</h4>
-                </header>
-                <p>{desc}</p>
-                <Link to={`post/${i}`}>
-                  <button onClick={handleGetComments.bind(this, _id)}>
-                    Read more
-                  </button>
-                </Link>
-              </>
-            </article>
-          ) : null
-        )}
+        {posts.map(({ _id, title, desc }, i) => (
+          <article key={i}>
+            <header>
+              <h4>{title}</h4>
+            </header>
+            <p>{desc}</p>
+            <Link to={`post/${i}`}>
+              <button onClick={handleGetComments.bind(this, _id)}>
+                Read more
+              </button>
+            </Link>
+          </article>
+        ))}
       </div>
     </aside>
   );

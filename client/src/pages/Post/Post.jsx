@@ -7,7 +7,8 @@ import {
   getIdPost,
   loadPosts
 } from "../../redux/actions/index";
-import { Comments, Article, Spinner } from "../../components/index";
+import { Comments, Article } from "../../components/index";
+import spinner from "../../hoc/spinner";
 import "./Post.scss";
 
 class Post extends Component {
@@ -35,23 +36,14 @@ class Post extends Component {
       <main>
         <section>
           <article className="post">
-            {isLoadPosts ? (
-              <>
-                <Article post={currentPost} />
-                {isLoadComments ? (
-                  <Comments
-                    comments={comments}
-                    post={currentPost}
-                    auth={auth}
-                    deleteComment={deleteComment}
-                  />
-                ) : (
-                  <Spinner className={`general`} />
-                )}
-              </>
-            ) : (
-              <Spinner className={`general`} />
-            )}
+            <MainArticle isLoading={isLoadPosts} post={currentPost} />
+            <CommentsArticle
+              isLoading={isLoadComments}
+              comments={comments}
+              post={currentPost}
+              auth={auth}
+              deleteComment={deleteComment}
+            />
           </article>
         </section>
       </main>
@@ -81,6 +73,9 @@ const mapStateToProps = ({ posts, comments, isLoad, auth, idPost }) => ({
   auth,
   idPost
 });
+
+const MainArticle = spinner(Article);
+const CommentsArticle = spinner(Comments);
 
 export default connect(
   mapStateToProps,

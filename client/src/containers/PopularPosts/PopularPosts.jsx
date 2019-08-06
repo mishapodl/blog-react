@@ -5,7 +5,6 @@ import "./PopularPosts.scss";
 
 const PopularPosts = ({ posts, getIdPost }) => {
 	const handleGetComments = id => {
-		console.log(id)
     getIdPost(id);
   };
   return (

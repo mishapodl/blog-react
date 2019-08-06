@@ -9,10 +9,10 @@ import {
 import {
   AsideBarPosts,
   LatestPosts,
-  PopularPosts,
-  Spinner,
-  Pagination
-} from "../../components/index";
+  PopularPosts
+} from "../../containers/index";
+import { Pagination } from "../../components/index";
+import spinner from "../../hoc/spinner";
 import "./Home.scss";
 
 const mapStateToProps = ({
@@ -44,33 +44,32 @@ class Home extends Component {
     } = this.props;
     return (
       <main>
-        {isLoadPopularPosts ? (
-          <PopularPosts posts={popularPosts} getIdPost={getIdPost} />
-        ) : (
-          <Spinner className={`general`} header={`Popular last month`} />
-        )}
+        <RandomPosts
+          posts={popularPosts}
+          getIdPost={getIdPost}
+          isLoading={isLoadPopularPosts}
+          classSpinner={`latest`}
+        />
         <section className="latest-posts">
           <header>
             <h2>Latest posts</h2>
           </header>
-
           <div className="container">
-            {isLoadPosts ? (
-              <div>
-                <LatestPosts posts={posts} getIdPost={getIdPost} />
-                <Pagination loadPosts={loadPosts} />
-              </div>
-            ) : (
-              <Spinner className={`latest-posts`} />
-            )}
-            {isLoadPopularPosts ? (
-              <AsideBarPosts posts={popularPosts} getIdPost={getIdPost} />
-            ) : (
-              <Spinner
-                className={`aside-posts`}
-                header={`Popular last month`}
+            <div>
+              <NewPosts
+                posts={posts}
+                getIdPost={getIdPost}
+                isLoading={isLoadPosts}
+                classSpinner={`latest`}
               />
-            )}
+              <Pagination loadPosts={loadPosts} />
+            </div>
+            <AsidePosts
+              posts={popularPosts}
+              getIdPost={getIdPost}
+              isLoading={isLoadPopularPosts}
+              classSpinner={`aside`}
+            />
           </div>
         </section>
       </main>
@@ -84,6 +83,10 @@ Home.propTypes = {
   getIdPost: PropTypes.func,
   loadPosts: PropTypes.func
 };
+
+const AsidePosts = spinner(AsideBarPosts);
+const NewPosts = spinner(LatestPosts);
+const RandomPosts = spinner(PopularPosts);
 
 export default connect(
   mapStateToProps,
