@@ -1,8 +1,8 @@
-#FULL APP
+This is my own project, not a tutorial
 ---------
 # Blog with news and post.
 
-![MERN](https://lh5.googleusercontent.com/bUK2lwuOA0bruwhaUgpw5UX1mSdMQp8TkkvJeb7ir_FtmCDPxkB-wexcApczrANR3-IAgXKJyDLjhe8-BQ-j=w1920-h926)
+![MERN](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAJomgC_rvOSvRBHllRpyXyBdKT-Pth-aWjNmhX58TwOq0x7Ac)
 
 In this project I used these libraries and utilities:
 
