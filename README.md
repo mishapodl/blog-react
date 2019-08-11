@@ -1,4 +1,4 @@
-This is my own project, not a tutorial
+This is my own project, not a tutorial. I tryed to show my skills in Redux and backend, not fronted, so a little content.
 ---------
 # Blog with news and post.
 
