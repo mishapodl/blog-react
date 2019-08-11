@@ -93,7 +93,6 @@ div#root > header {
           border-radius: 0;
           border: 0;
           background: rgba(0, 0, 0, 0.86);
-          transition: 0.3s;
           flex-direction: column;
           > ul {
             flex-direction: column;
@@ -132,14 +131,12 @@ div#root > header {
         height: 40px;
         margin: 0 0 0 1.5rem;
         padding: 4px;
-        transition: 0s;
         font-size: 1.8rem;
         color: rgb(255, 255, 255);
         cursor: pointer;
         @media (max-width: 1024px) {
           display: block;
           width: 40px;
-          transition: 0.3s;
         }
       }
     }
