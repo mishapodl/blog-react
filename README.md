@@ -6,7 +6,7 @@ deployment -v
 https://pretty-good-blog.herokuapp.com/
 
 ![MERN](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAJomgC_rvOSvRBHllRpyXyBdKT-Pth-aWjNmhX58TwOq0x7Ac)
-
+---
 In this project I used these libraries and utilities:
 
 Frontend:
