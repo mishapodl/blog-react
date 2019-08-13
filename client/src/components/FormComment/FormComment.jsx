@@ -33,14 +33,21 @@ class FormComment extends Component {
     };
 
     this.props.sendComment(newComment);
+    this.setState({ body: "" });
   };
 
   render() {
     const { isAuthenticated } = this.props;
+    const { body } = this.state;
     return (
       <div className="form-leave-comment">
         <h3>Leave comment</h3>
-        <LeaveComment onSubmit={this.onSubmit} onChange={this.onChange} isAuthenticated={isAuthenticated}/>
+        <LeaveComment
+          onSubmit={this.onSubmit}
+          onChange={this.onChange}
+          isAuthenticated={isAuthenticated}
+          body={body}
+        />
       </div>
     );
   }
