@@ -21,8 +21,12 @@ $break-small: 768px;
 
 @mixin info {
   > li {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     > a {
       padding: 0 0.2rem;
       color: #fff;
@@ -31,9 +35,15 @@ $break-small: 768px;
       letter-spacing: 0.1rem;
       text-decoration: none;
       > i.icon {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         width: 1rem;
         height: 1rem;
         margin: 5px;
@@ -53,17 +63,25 @@ div#root > header {
     position: absolute;
     right: 20px;
     top: 50%;
-		transform: translate(0px, -50%);
+		-webkit-transform: translate(0px, -50%);
+		        transform: translate(0px, -50%);
+		-webkit-transition: .3s;
 		transition: .3s;
 		&:hover {
 			right: 20px;
 		}
 		@media (max-width: $break-medium) {
-			transform: translate(0px, -40%);
+			-webkit-transform: translate(0px, -40%);
+			        transform: translate(0px, -40%);
 		}
     > ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
       @include info;
       > li > a {
 				margin: 5px 0;
@@ -79,18 +97,28 @@ div#root > header {
 
 div#root > footer {
   > div.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 90%;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     > section.contact-information {
       overflow: hidden;
       min-width: 300px;
       border: 1px solid #fff;
       padding: 0 0 1rem 0;
       > header {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         margin: 1rem auto;
         padding: 0 0.5rem;
         > h3 {
@@ -105,10 +133,14 @@ div#root > footer {
         }
       }
       > ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         width: 100%;
-        justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
         @include info;
       }
     }

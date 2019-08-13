@@ -27,6 +27,7 @@ section.latest-posts {
       min-width: 250px;
       margin-left: 2%;
       margin-top: 1rem;
+      -webkit-transition: 0.3s;
       transition: 0.3s;
       padding: 0 10px;
       > header {
@@ -38,8 +39,13 @@ section.latest-posts {
         }
       }
       div.posts {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         article {
           position: relative;
           border-bottom: 1px solid #000;
@@ -78,6 +84,7 @@ section.latest-posts {
             padding: 0.3rem 0.5rem;
             border: 1px solid #000;
             background-color: #fff;
+            -webkit-transition: 0.33s;
             transition: 0.33s;
             cursor: pointer;
             color: #777777;
@@ -92,7 +99,8 @@ section.latest-posts {
         }
       }
       &:hover {
-        box-shadow: 1px 20px 20px 0px #00000029;
+        -webkit-box-shadow: 1px 20px 20px 0px #00000029;
+                box-shadow: 1px 20px 20px 0px #00000029;
       }
       @media (max-width: 1024px) {
         width: 50%;

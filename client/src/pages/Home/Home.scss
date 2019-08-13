@@ -9,14 +9,25 @@ $border-color-main-H2: #000;
   border: 1px solid #fff;
 }
 @mixin flex-around {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 @mixin flex-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 @mixin h2-on-page {
   text-align: center;
@@ -46,7 +57,9 @@ main {
     }
     > div.container {
       @include flex-between;
-      align-items: flex-start;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start;
       min-height: 1000px;
       margin: 20px 0;
       > div > button {
@@ -56,8 +69,10 @@ main {
         background: rgb(237, 120, 106);
         border-radius: 4px;
         border: 0;
-        box-shadow: 0.125rem 0.175rem 0 0 #00000020;
+        -webkit-box-shadow: 0.125rem 0.175rem 0 0 #00000020;
+                box-shadow: 0.125rem 0.175rem 0 0 #00000020;
         outline: 0;
+        -webkit-transition: 0.33s;
         transition: 0.33s;
         color: rgb(255, 255, 255);
         cursor: pointer;

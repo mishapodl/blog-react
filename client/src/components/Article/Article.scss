@@ -29,7 +29,8 @@ article.post {
         width: 100%;
         left: 50%;
         top: 50%;
-				transform: translate(-50%, -50%);
+				-webkit-transform: translate(-50%, -50%);
+				        transform: translate(-50%, -50%);
       }
 			@media (max-width: 768px) {
 				max-width: 700px;
@@ -91,8 +92,10 @@ article.post {
     border-radius: 4px;
     border: 0;
     background: #ed786a;
-    box-shadow: 0.125rem 0.175rem 0 0 #00000020;
+    -webkit-box-shadow: 0.125rem 0.175rem 0 0 #00000020;
+            box-shadow: 0.125rem 0.175rem 0 0 #00000020;
     outline: 0;
+    -webkit-transition: 0.33s;
     transition: 0.33s;
     cursor: pointer;
     color: #ffffff;

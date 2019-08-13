@@ -1,9 +1,16 @@
 // @import "../../App.scss";
 
 div#root > footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 2rem;
   border-top: 1px solid black;
   padding: 1rem 0;
@@ -18,8 +25,12 @@ div#root > footer {
     padding: 1rem 0 0 0;
     border-top: 1px solid #fff;
     > div.footer-conteiner {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: space-between;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
       width: 90%;
       margin: 0 auto;
       > div.footer-copyright,

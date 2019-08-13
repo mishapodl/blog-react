@@ -1,6 +1,10 @@
 .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 2rem;
   > button {
     display: inline-block;
@@ -9,8 +13,10 @@
     border-radius: 4px;
     border: 0;
     background: rgb(237, 120, 106);
-    box-shadow: 0.125rem 0.175rem 0 0 #00000020;
+    -webkit-box-shadow: 0.125rem 0.175rem 0 0 #00000020;
+            box-shadow: 0.125rem 0.175rem 0 0 #00000020;
     outline: 0;
+    -webkit-transition: 0.33s;
     transition: 0.33s;
     color: rgb(255, 255, 255);
     cursor: pointer;

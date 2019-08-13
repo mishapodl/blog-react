@@ -14,11 +14,18 @@ section.latest-posts {
         width: 100%;
       }
       div.latest-posts-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         overflow: hidden;
-        flex-wrap: wrap;
-        flex: 3;
-        justify-content: space-between;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-flex: 3;
+            -ms-flex: 3;
+                flex: 3;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         @media (max-width: 768px) {
           width: 80%;
           margin: 0 auto;
@@ -33,8 +40,11 @@ section.latest-posts {
           margin: 2% 1.5%;
           min-width: 300px;
           max-width: 47%;
+          -webkit-transition: 0.3s;
           transition: 0.3s;
-          flex: 1;
+          -webkit-box-flex: 1;
+              -ms-flex: 1;
+                  flex: 1;
           color: #fff;
           cursor: pointer;
           > div.bg-post-img {
@@ -43,12 +53,15 @@ section.latest-posts {
             width: 100%;
             height: 100%;
             top: 0;
+            -webkit-transition: 1s;
             transition: 1s;
             img {
               height: 100%;
               width: 100%;
-              object-fit: cover;
-              object-position: center;
+              -o-object-fit: cover;
+                 object-fit: cover;
+              -o-object-position: center;
+                 object-position: center;
             }
             span {
               position: absolute;
@@ -89,6 +102,7 @@ section.latest-posts {
             padding: 0.3rem 0.5rem;
             border: 1px solid #fff;
             background-color: #00000044;
+            -webkit-transition: 0.33s;
             transition: 0.33s;
             cursor: pointer;
             color: #ffffff;
@@ -105,7 +119,9 @@ section.latest-posts {
             min-width: unset;
             max-width: unset;
             width: unset;
-            flex: unset;
+            -webkit-box-flex: unset;
+                -ms-flex: unset;
+                    flex: unset;
           }
         }
       }

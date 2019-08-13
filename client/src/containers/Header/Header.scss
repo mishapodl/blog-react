@@ -8,14 +8,23 @@ $break-small: 768px;
 $break-x-small: 500px;
 
 @mixin flex-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 div#root > header {
 	@include flex-between;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 50vh;
 	max-height: 500px;
 	min-height: 460px;
@@ -23,6 +32,7 @@ div#root > header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto 150%;
+	-webkit-transition: 1s;
 	transition: 1s;
 	@media (max-width: $break-m-large) {
 		background-size: auto 125%;
