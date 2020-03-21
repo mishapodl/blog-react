@@ -16,5 +16,5 @@ preprocesor sass/scss, flexbox
 Backend:
 NodeJS, MongoDB, Exppress, JWT, mongoose
 
-This project is available for improvement or refactoring code
+This project is available for improvement or refactoring code 
 
